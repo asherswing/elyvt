@@ -1,0 +1,126 @@
+
+<div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+
+        <div class="animate form login_form">
+
+          <div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          <section class="login_content">
+            <form method="post" action="/users/login">
+              <input type="hidden" name="redirectURL" value="{{redirectURL}}">
+              <div>
+                <input type="text" class="form-control" name="username" placeholder="Enter Email ID ">
+              </div>
+              <div>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+              <div>
+                <input type="submit" class="btn btn-default submit" value="Log in">
+                <a class="reset_pass" href="/users/forgot" id="rememb_">Lost your password?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">New to site?
+                       <a href="#signup" class="to_register" id="signup_"> Create Account </a>
+                </p>
+
+                <div class="clearfix"></div>
+
+                <div>
+                     <img src="../build/images/elevate-logo@3x.png" style="border: 0; width: 296px;">
+                              </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        
+      </div>
+          
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+          {{#if errors}}
+			      {{#each errors}}
+			        <div class="alert alert-danger">{{msg}}</div>
+			      {{/each}}
+			{{/if}}
+            
+            <form method="post" action="/users/register">
+               <div class="form-group">
+                <input type="text" class="form-control" placeholder="First Name" name="firstname">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Last Name" name="lastname">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Title" name="title">
+              </div>
+              <div class="form-group">
+             <input type="ptext" class="form-control" placeholder="Phone Number" name="phone">
+              </div>
+               <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" name="email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password2">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+
+
+          </section>
+        </div>
+      </div>
+    </div>
+
+  <script type="text/javascript">
+          $('#signup_').on("click", function() {
+
+              $('body').addClass('sign_up_');
+              $('body').removeClass('login_');
+              $('body').removeClass('rememb_');
+          });
+
+          $('#signin_').on("click", function() {
+
+              $('body').addClass('login_');
+              $('body').removeClass('sign_up_');
+              $('body').removeClass('rememb_');
+          });
+
+          $('#rememb_').on("click", function() {
+
+              $('body').addClass('rememb_');
+              $('body').removeClass('login_');
+              $('body').removeClass('sign_up_');
+          });
+      </script>
+
+
+
+
+

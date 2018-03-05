@@ -1,0 +1,367 @@
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+
+var  tasksData = {
+  "kind": "tasks",
+  "data": [
+    {
+      "id": "IEABXH6HKQFPVZ4M",
+      "accountId": "IEABXH6H",
+      "title": "601- Add any additional stakeholders to recurring reports",
+      "description": "",
+      "briefDescription": "",
+      "parentIds": [
+        "IEABXH6HI4FPVZ37"
+      ],
+      "superParentIds": [],
+      "sharedIds": [
+        "KUADL6XV",
+        "KX75JPC2"
+      ],
+      "responsibleIds": [],
+      "status": "Active",
+      "importance": "Normal",
+      "createdDate": "2017-10-16T20:56:21Z",
+      "updatedDate": "2017-10-16T20:56:21Z",
+      "dates": {
+        "type": "Backlog"
+      },
+      "scope": "WsTask",
+      "authorIds": [
+        "KUADL6XV"
+      ],
+      "customStatusId": "IEABXH6HJMAAAAAA",
+      "hasAttachments": false,
+      "attachmentCount": 0,
+      "permalink": "https://www.wrike.com/open.htm?id=184215436",
+      "priority": "04c3f8008000000000007400",
+      "superTaskIds": [
+        "IEABXH6HKQFPVZ4L"
+      ],
+      "subTaskIds": [],
+      "dependencyIds": [],
+      "metadata": [],
+      "customFields": []
+    },
+    {
+      "id": "IEABXH6HKQFPVZ4O",
+      "accountId": "IEABXH6H",
+      "title": "601- Set dates",
+      "description": "",
+      "briefDescription": "",
+      "parentIds": [
+        "IEABXH6HI4FPVZ37"
+      ],
+      "superParentIds": [],
+      "sharedIds": [
+        "KUADL6XV",
+        "KX75JPC2"
+      ],
+      "responsibleIds": [],
+      "status": "Active",
+      "importance": "Normal",
+      "createdDate": "2017-10-16T20:56:22Z",
+      "updatedDate": "2017-10-16T20:56:22Z",
+      "dates": {
+        "type": "Backlog"
+      },
+      "scope": "WsTask",
+      "authorIds": [
+        "KUADL6XV"
+      ],
+      "customStatusId": "IEABXH6HJMAAAAAA",
+      "hasAttachments": false,
+      "attachmentCount": 0,
+      "permalink": "https://www.wrike.com/open.htm?id=184215438",
+      "priority": "04c3f8008000000000007000",
+      "superTaskIds": [
+        "IEABXH6HKQFPVZ4L"
+      ],
+      "subTaskIds": [],
+      "dependencyIds": [],
+      "metadata": [],
+      "customFields": []
+    },
+    {
+      "id": "IEABXH6HKQFPVZ4Q",
+      "accountId": "IEABXH6H",
+      "title": "601- Add / remove any dependencies",
+      "description": "",
+      "briefDescription": "",
+      "parentIds": [
+        "IEABXH6HI4FPVZ37"
+      ],
+      "superParentIds": [],
+      "sharedIds": [
+        "KUADL6XV",
+        "KX75JPC2"
+      ],
+      "responsibleIds": [],
+      "status": "Completed",
+      "importance": "Normal",
+      "createdDate": "2017-10-16T20:56:22Z",
+      "updatedDate": "2017-10-16T20:56:22Z",
+      "completedDate": "2017-10-16T20:56:22Z",
+      "dates": {
+        "type": "Backlog"
+      },
+      "scope": "WsTask",
+      "authorIds": [
+        "KUADL6XV"
+      ],
+      "customStatusId": "IEABXH6HJMAAAAAB",
+      "hasAttachments": false,
+      "attachmentCount": 0,
+      "permalink": "https://www.wrike.com/open.htm?id=184215440",
+      "priority": "04c3f8008000000000006c00",
+      "superTaskIds": [
+        "IEABXH6HKQFPVZ4L"
+      ],
+      "subTaskIds": [],
+      "dependencyIds": [],
+      "metadata": [],
+      "customFields": []
+    },
+    {
+      "id": "IEABXH6HKQFPVZ4S",
+      "accountId": "IEABXH6H",
+      "title": "601- Assign team members",
+      "description": "",
+      "briefDescription": "",
+      "parentIds": [
+        "IEABXH6HI4FPVZ37"
+      ],
+      "superParentIds": [],
+      "sharedIds": [
+        "KUADL6XV",
+        "KX75JPC2"
+      ],
+      "responsibleIds": [],
+      "status": "Active",
+      "importance": "Normal",
+      "createdDate": "2017-09-16T20:56:22Z",
+      "updatedDate": "2017-10-16T20:56:22Z",
+      "completedDate": "2017-10-16T20:56:22Z",
+      "dates": {
+        "type": "Backlog"
+      },
+      "scope": "WsTask",
+      "authorIds": [
+        "KUADL6XV"
+      ],
+      "customStatusId": "IEABXH6HJMAAAAAB",
+      "hasAttachments": false,
+      "attachmentCount": 0,
+      "permalink": "https://www.wrike.com/open.htm?id=184215442",
+      "priority": "04c3f8008000000000006800",
+      "superTaskIds": [
+        "IEABXH6HKQFPVZ4L"
+      ],
+      "subTaskIds": [],
+      "dependencyIds": [],
+      "metadata": [],
+      "customFields": []
+    }
+    ]
+}
+
+
+
+
+
+	var now = moment();
+	var monthsLists = []
+	var activetaskList = []
+	var completedtaskList = []
+	for($i=0; $i<6;$i++){
+		if($i==0){
+			monthsLists[0] = now.format('MMM YYYY');
+		}else{
+			monthsLists[$i] = now.subtract(1, 'months').format('MMM YYYY');
+		}
+		$atl = 0;;
+		$ctl = 0;
+		for(var Element in tasksData['data']){
+			console.log(tasksData['data'][Element]['createdDate']);
+			var d = moment(tasksData['data'][Element]['createdDate'],'YYYY-MM-DDTHH:mm:ssZ');
+			if(monthsLists[$i] == d.format('MMM YYYY')){
+				if(tasksData['data'][Element]['status']=="Completed"){
+					$ctl++;
+				}
+				if(tasksData['data'][Element]['status']=="Active"){
+					$atl++;
+				}
+			}
+			var month = d.format('M');
+			var year = d.format('YYYY');
+			var lastmonth = d.subtract(1, 'months').format('MMM YYYY');
+		}
+
+		console.log("Line 208", $atl, $ctl)
+		activetaskList[$i] = $atl
+		completedtaskList[$i] = $ctl
+
+	}
+
+
+console.log(monthsLists.reverse())
+console.log(activetaskList.reverse())
+completedtaskList.reverse()
+
+	var xData = [
+		  monthsLists,
+		  monthsLists,
+		];
+
+	var yData = [
+	  activetaskList,
+	  completedtaskList
+	];
+
+var colors = ['rgba(49,130,189, 1)',
+  'rgba(189,189,189,1)'
+];
+
+var lineSize = [2, 2];
+
+var labels = ['Active', 'Completed'];
+
+var data = [];
+
+for ( var i = 0 ; i < xData.length ; i++ ) {
+  var result = {
+    x: xData[i],
+    y: yData[i],
+    type: 'scatter',
+    mode: 'lines',
+    line: {
+      color: colors[i],
+      width: lineSize[i]
+    }
+  };
+  var result2 = {
+    x: [xData[i][0], xData[i][5]],
+    y: [yData[i][0], yData[i][5]],
+    type: 'scatter',
+    mode: 'markers',
+    marker: {
+      color: colors[i],
+      size: 12
+    }
+  };
+  data.push(result, result2);
+}
+
+var layout = {
+  showlegend: false,
+  xaxis: {
+    showline: true,
+    showgrid: false,
+    showticklabels: true,
+    linecolor: 'rgb(204,204,204)',
+    linewidth: 2,
+    autotick: false,
+    ticks: 'outside',
+    tickcolor: 'rgb(204,204,204)',
+    tickwidth: 2,
+    ticklen: 5,
+    tickfont: {
+      family: 'Arial',
+      size: 12,
+      color: 'rgb(82, 82, 82)'
+    }
+  },
+  yaxis: {
+    showgrid: false,
+    zeroline: false,
+    showline: false,
+    showticklabels: false
+  },
+  autosize: false,
+  margin: {
+    autoexpand: false,
+    l: 100,
+    r: 20,
+    t: 100
+  },
+  annotations: [
+    {
+      xref: 'paper',
+      yref: 'paper',
+      x: 0.0,
+      y: 1.05,
+      xanchor: 'left',
+      yanchor: 'bottom',
+      text: 'Tasks Overview',
+      font:{
+        family: 'Arial',
+        size: 30,
+        color: 'rgb(37,37,37)'
+      },
+      showarrow: false
+    },
+    {
+      xref: 'paper',
+      yref: 'paper',
+      x: 0.5,
+      y: -0.1,
+      xanchor: 'center',
+      yanchor: 'top',
+      text: 'Source: Pew Research Center & Storytelling with data',
+      showarrow: false,
+      font: {
+        family: 'Arial',
+        size: 12,
+        color: 'rgb(150,150,150)'
+      }
+    }
+  ]
+};
+
+for ( var i = 0 ; i < xData.length ; i ++ ) {
+  var result = {
+    xref: 'paper',
+    x: 0.05,
+    y: yData[i][0],
+    xanchor: 'right',
+    yanchor: 'middle',
+    text: labels[i] + ' ' + yData[i][0] +'%',
+    showarrow: false,
+    font: {
+      family: 'Arial',
+      size: 16,
+      color: 'black'
+    }
+  };
+  var result2 = {
+    xref: 'paper',
+    x: 0.95,
+    y: yData[i][11],
+    xanchor: 'left',
+    yanchor: 'middle',
+    text: yData[i][11] +'%',
+    font: {
+      family: 'Arial',
+      size: 16,
+      color: 'black'
+    },
+    showarrow: false
+  };
+  
+  layout.annotations.push(result, result2);
+}
+
+
+Plotly.newPlot('myDiv', data, layout);
+
+  </script>
+</body>

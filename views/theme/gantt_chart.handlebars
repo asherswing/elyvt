@@ -1,0 +1,175 @@
+<body class="nav-md">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+         <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href ="/gantt-chart">Gantt Chart</a></li>
+                </ol>
+            </nav>
+       
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Gantt Chart</h3>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="row">
+                    <div class="col-md-12 col-xs-12  widget_tally_box col-lg-12">
+                      
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="col-md-12">                        
+                        <div class="col-md-4 col-md-offset-4">
+                          <div>Select Project</div>
+                          <select class="project form-control" onchange="changeProject(this.value)">
+                            {{{projectDropdown}}}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="clearfix"></div>
+                      {{#if isProject}}
+                        <div class="gantt-container col-md-12" style="overflow: scroll; width:900px;height:400px;background:#fff">
+                          <div class="zoominZoomout" onclick="zoomGanttChart()" style="background:white;width:auto;height:20px;float:right;cursor:pointer"><i class="glyphicon glyphicon-zoom-in"></i> Zoom In/Out</div>
+                          <div style="">
+                            <svg id="gantt"></svg>
+                          </div>
+                         
+                        </div>
+                        
+                      {{/if}}
+
+                      <div id="placeholder"></div>
+                      <div class="clearfix"></div>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+
+            </div>
+          </div>
+
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+
+  <script type="text/javascript" src="/js/snap.svg-min.js"></script>
+  <script src="/js/frappe-gantt.min.js" ></script>
+
+  <script>
+  function changeProject(dropdowndata){
+    console.log(dropdowndata);
+    window.location.href="/charts/gantt?id="+dropdowndata
+  }
+
+ {{#if isProject}}
+  var tasksGanttChartContents = []
+
+  var tasksgantdata = {{{tasksGanttChartContents}}}
+
+  for (var element in tasksgantdata){
+    var task = {
+       id: tasksgantdata[element]['id'],
+      name: tasksgantdata[element]['name'],
+      start: tasksgantdata[element]['start'],
+      end: tasksgantdata[element]['end'],
+      progress: 100
+    } 
+    if(tasksgantdata[element]['dependencies']){
+      task.dependencies = tasksgantdata[element]['dependencies']
+    }
+    tasksGanttChartContents.push(task);
+  }
+
+console.log(tasksgantdata, tasksGanttChartContents);
+tasksGanttChartContents.sort(function(a,b){
+  var c = new Date(a.start);
+  var d = new Date(b.start);
+  return c-d;
+});
+
+var gantt = new Gantt("#gantt", tasksGanttChartContents);
+gantt.change_view_mode('Week')
+{{/if}}
+
+var zoomin = false;
+function zoomGanttChart(){
+  zoomin = !zoomin;
+  if(zoomin){
+    $(".gantt-container").css('position','fixed').css('top',0).css('bottom',0).css('left',0).css('right',0).css('height', '100%').css('width','100%');
+  }else{
+    $(".gantt-container").css('position','relative').css('top',0).css('bottom',0).css('left',0).css('right',0).css('height', '400px').css('width','900px');
+  }
+}
+
+  
+  </script>
+
+</body>
+</html>

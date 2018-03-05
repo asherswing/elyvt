@@ -1,0 +1,139 @@
+ <body class="nav-md">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+         <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="/contact/list">Contact</a></li>
+                </ol>
+            </nav>
+       
+
+       
+        <h2 class="page-header">Add New User</h2>
+        {{#if errors}}
+              {{#each errors}}
+                <div class="alert alert-danger">{{msg}}</div>
+              {{/each}}
+        {{/if}}
+        <form method="post" action="/contact/register">
+           <div class="form-group col-md-6">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname">
+          </div>
+          <div class="clearfix"></div> 
+          <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname">
+          </div>
+          <div class="clearfix"></div> 
+          <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email">
+          </div>
+          <div class="clearfix"></div> 
+          <div class="form-group col-md-6">
+            <label>Phone Number</label>
+            <input type="ptext" class="form-control" placeholder="Phone Number" name="phone">
+          </div>
+		  <div class="clearfix"></div> 
+          <div class="form-group col-md-12">
+                              <label for="project_name" class="pull-left ">Roles</label>
+                              <div class="col-sm-6">
+                                {{#each roles as |role roleId|}}
+                                    <input type="checkbox" value="{{{role._id}}}" name="roles"> {{{role.title}}}<br/>
+                                {{/each}}
+                              </div>
+                              </div>
+<div class="clearfix"></div> 
+          <div class="form-group col-md-6">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password">
+          </div>
+          <div class="clearfix"></div> 
+          <div class="form-group col-md-6">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password2">
+          </div >
+          <div class="clearfix"></div> 
+<div class="form-group col-md-6">
+            
+            <div class="col-sm-6">
+            <input type="checkbox"  name="no_email" checked><label style="padding-right: 10px;">No Email</label>
+            </div>
+          </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+
+
+            
+            
+
+            </div>
+          
+
+          <!-- footer content -->
+         
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+
+  
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+
+  <script src="/vendors/plotly/js/plotly-latest.min.js"></script>
+  <script src="/vendors/plotly/js/numeric.min.js"></script>
+  
+<script>
+$('#myCheckBox').each(function(){ this.no_email = true; });
+</script>
+
+  
+  
+  
+</body>
+</html>
+
+    

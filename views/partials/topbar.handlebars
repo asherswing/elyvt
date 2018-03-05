@@ -1,0 +1,38 @@
+<div class="top_nav tb_t">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+                <!--<div class="nav home-btn">
+                    <a href="/" class="home-link"><i class="fa fa-home"></i> Home</a>
+                </div>-->
+              <ul class="nav navbar-nav navbar-right">
+
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">{{{ userDetails.firstname }}} {{{ userDetails.lastname }}}
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><a href="/folders/new-project">Create New Project</a></li>
+                    <li><a href="/tasks/create">Create New Task</a></li> 
+                    <li><a href="/contact/list">Contacts</a></li>
+                    <li><a href="/role/list">Roles</a></li>
+                    <li><a href="/profile">Me</a></li>                    
+                     <li><a href="/email/settings">E-Mail Settings</a></li>
+                    <li><a href="/change-password">Change Password</a></li>
+                      {{#if userDetails}}
+                        <li role="presentation"><a href="/users/logout">Logout</a></li>
+                      {{else}}
+                        <li role="presentation"><a href="/users/login">Login</a></li>
+                      {{/if}}
+                    
+                  </ul>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+        

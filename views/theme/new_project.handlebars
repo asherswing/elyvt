@@ -1,0 +1,516 @@
+<body class="nav-md">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+  <style type="text/css">
+  .padding-left{
+    padding-left: 10px;
+  }
+  </style>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+        <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New Project</li>
+                </ol>
+            </nav>
+       
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Create New Projects</h3>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="row">
+                    <div class="col-md-12 col-xs-12  widget_tally_box col-lg-12">
+                          <form class="form form-horizontal" method="POST" onsubmit="return datevalidate()" name ="projectcreat">
+                            <div class="form-group row col-md-12   ">
+                              <label for="project_name" class="pull-left col-form-label col-md-2 text-right">Project Name</label>
+                              <div class="col-sm-6">
+                                <input type="text" class="form-control" name="project_name" id="project_name" placeholder="Project Name..." >
+                              </div>
+                            </div>
+
+                            <div class="col-md-9 col-md-offset-3">
+                              <div class="col-md-12">
+                                <div class="clearfix"></div>
+                                <div class="padding-left"><label> -<input type="checkbox" name="Communication" checked="true" id="Communication" onchange="checkComms()"> Communication</label></div>
+                                
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Conceirge" checked="true" id="Concierge" onchange="checkConcierge()"> Concierge</label></div>
+                                
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Events" checked="true" id ="Events" onchange="checkEvents()"> Events</label></div>
+                                
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Facility_Booking" checked="true" id="Facility" onchange="checkfacility()"> Facility Booking</label></div>
+                                
+                                <div class="padding-left"><label> -<input type="checkbox" name="f_B" checked="true" id="F_B" onchange="checkF_B()"> F&B</label></div>
+                               
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Security" checked="true" id="Security" onchange="checkSecurity()"> Security</label></div>
+
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Security_integer" checked="true" id="Securityineger" onchange="checkSecurityinteger()"> Security Integrator</label></div>
+
+                                <div class="padding-left"><label> -<input type="checkbox" name="UI_Config" checked="true" id="UI_CONFIG" onchange="checkUI_CONFIG()"> UI Config</label></div>
+                              </div>                              
+                            </div>
+
+
+                           
+                            <div class="form-group col-md-12 col-xs-12">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Project Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="projectManager" class="form-control" onChange="projectMangerChange(this.value)">
+                                  {{{contactsDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+
+                           <div class="form-group col-md-12 col-xs-12">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Building Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="BuildingManager" class="form-control" onChange="BuildingManagerChange(this.value)">
+                                  {{{BuildingmanagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                            <div class="form-group  col-md-12 col-xs-12">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Client Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="clientManager" class="form-control" onChange="clientManagerChange(this.value)">
+                                  {{{ClientDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                             </div>
+                          <div class="form-group col-md-12 col-xs-12" id="UI_CONFIGManagerView">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> UI Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="UIManager" class="form-control" onChange="UIManagerChange(this.value)">
+                                  {{{UIManagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                              </div>
+                              <div class="form-group  col-md-12 col-xs-12" id="SecurityManagerView">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Security Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="securityManager" class="form-control" onChange="securityManagerChange(this.value)">
+                                  {{{SecurityDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                              </div>
+                              <div class="form-group col-md-12 col-xs-12" id="SecurityIntegerManagerView">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Security Integrator Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="securityIntegerManager" class="form-control" onChange="securityintegratorManagerChange(this.value)">
+                                  {{{SecurityInteraterDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                              </div>
+<div class="form-group col-md-12 col-xs-12"  id="ConciergeManagerView">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Concierge Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="conciegeManager" class="form-control" onChange="conciegeManagerChange(this.value)">
+                                  {{{ConceirageDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                              </div>
+<div class="form-group col-md-12 col-xs-12" id="commsManagerView">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"  > Communication Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="communicationManager" class="form-control" onChange="communicationManagerChange(this.value)">
+                                  {{{communitionDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+
+                              </div>
+                              <div class="form-group col-md-12 col-xs-12"  id="EventsManagerView">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Events Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="eventsManager" class="form-control" onChange="eventsManagerChange(this.value)">
+                                  {{{eventsDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                              </div>
+                              <div class="form-group  col-md-12 col-xs-12"  id="FacilityManagerView">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Facility Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="facilityManager" class="form-control" onChange="facilityManagerChange(this.value)">
+                                  {{{facilitysDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                              </div>
+                              <div class="form-group  col-md-12 col-xs-12"  id="F_BManagerView">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Food And Bevarage Manager</label>
+                              <div class="col-sm-6 col-xs-12">
+                                <select name="fandbManager" class="form-control" onChange="fandbManagerChange(this.value)">
+                                  {{{fandbsDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                              </div>
+                              <div class="form-group  col-md-12 col-xs-12">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Client Launch Manager</label>
+                              <div class="col-sm-6">
+                                <select name="clientlaunchManager" class="form-control" onChange="clientlaunchManagerChange(this.value)">
+                                  {{{clientlaunchDropdownHTML}}}
+                                </select>           
+                              </div>
+                             <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                            <div class="clearfix" style="padding:5px;"></div>
+                             <div class="form-group col-md-12 col-xs-12 ">
+                                <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Start Date</label>
+                                <div class="col-sm-6 col-xs-12">
+                                  <input type="text" class="form-control" name="startDate" id="startDate" value="" placeholder=" mm/dd/yy" class="form-control datepicker">
+                                </div>
+                              </div>
+
+                              <div class="form-group col-md-12 col-xs-12">
+                                <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Due Date</label>
+                                <div class="col-sm-6 col-xs-12">
+                                  <input type="text" class="form-control" name="endDate" id="endDate"  placeholder="mm/dd/yy"value="" class="form-control datepicker">
+                                </div>
+                              </div>
+                          {{!--  <div class="form-group col-md-12 col-xs-12">
+                              <label for="project_name" class="pull-left col-form-label col-md-2 text-right">Roles</label>
+                              <div class="col-sm-6 col-xs-12">
+                                {{#each roles as |role roleId|}}
+                                    <input type="checkbox" value="{{{role._id}}}" name="roles"> {{{role.title}}}
+                                {{/each}}
+                              </div>
+                              
+                            </div>
+                             --}}
+                           
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 text-center">
+                              <button class="btn btn-primary">Create</button>
+                            </div>
+                          </form>
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="clearfix"></div>
+                      <div id="placeholder"></div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+
+            </div>
+          </div>
+
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+ >
+  <script src="/build/js/custom.js"></script>
+       <div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content" align="center">
+       <div class="login_wrapper" align="center">
+         <h2 class="page-header">Add New User</h2>
+           {{#if errors}}
+             {{#each errors}}
+              <div class="alert alert-danger">{{msg}}</div>
+            {{/each}}
+           {{/if}}
+        <form method="post" action="/users/userrprojectegister" align ="center">
+          <div class="form-group row col-md-12" align="center">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" align="right">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" align="center">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="title" align="center">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password" align="center">
+          </div>
+                            
+          <div class="form-group row col-md-12">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password2" align="center" />
+            <input type="hidden" placeholder="" name="projectID" align="center" value ="{{{projectData._id}}}">
+            <input type="hidden"  placeholder="" name="projectManager" align="center" value="" id ="projectMangerHidden">
+            <input type="hidden" placeholder="" name="ClientManager" align="center" value ="" id ="ClientManagerHidden">
+            <input type="hidden"  placeholder="" name="BuildingManager" align="center" value ="" id ="BuildingManagerHidden">
+            <input type="hidden"  placeholder="" name="UIManager" align="center" value ="" id ="UIManagerhidden">
+            <input type="hidden"  placeholder="" name="SecurityManager" align="center" value =""
+            id ="SecurityManagerHidden">
+            <input type="hidden"  placeholder="" name="SecurituintegrityManager" align="center" value ="" id ="SecurituintegrityManagerHidden">
+            
+            <input type="hidden"  placeholder="" name="ConceirageManager" align="center" value ="" id ="ConceirageManagerHidden">
+            <input type="hidden"  placeholder="" name="CommunticationManager" align="center" value ="" id ="communticationmanagerhidden">
+            <input type="hidden"  placeholder="" name="EventsManager" align="center" value ="" id ="EventsManagerHidden">
+            <input type="hidden"  placeholder="" name="FacilityManager" align="center" value ="" id ="FacilityManagerHidden">
+            <input type="hidden"  placeholder="" name="FoodvebrageManager" align="center" value ="" id ="FoodvebrageManagerHidden"> 
+            <input type="hidden"  placeholder="" name="clientlauncherManager" align="center" value ="" id ="clientlauncherManagerHidden">
+
+          </div>
+          <button type="submit" class="btn btn-default" id = "formsubmit">Submit</button>
+          <button type="button" class="btn btn-right" data-dismiss="modal">Close</button>
+        </form>
+       
+          
+        
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script>
+$(function() {
+  $("form[name='projectcreat']").validate({
+    
+    rules: {
+      
+      project_name: "required",
+      startDate: "required",
+      endDate: "required",
+    },
+    
+    messages: {
+      title: "Please Enter your Project Name",
+      startDate: "Please Enter your Start Date",
+     endDate: "Please Enter your End Date",
+    },
+    
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+   function projectMangerChange(value){
+      $("#projectMangerHidden").val(value);
+      }
+      
+function BuildingManagerChange(value){
+      $("#BuildingManagerHidden").val(value);
+      
+      //console.log("laine no",value);
+   }
+
+   function clientManagerChange(value){
+      $("#ClientManagerHidden").val(value);
+      //console.log("line no",value);
+
+   }
+   function UIManagerChange(value){
+      $("#UIManagerhidden").val(value);
+   }
+   function securityManagerChange(value){
+      $("#SecurityManagerHidden").val(value);
+   }
+
+   function securityintegratorManagerChange(value){
+      $("#SecurituintegrityManagerHidden").val(value);
+   }
+   function conciegeManagerChange(value){
+      $("#ConceirageManagerHidden").val(value);
+   }
+   function communicationManagerChange(value){
+     console.log("line no ----362",value)
+      $("#communticationmanagerhidden").val(value);
+      console.log("line no ----363",value)
+   }
+   function eventsManagerChange(value){
+      $("#EventsManagerHidden").val(value);
+   }
+   function facilityManagerChange(value){
+      $("#FacilityManagerHidden").val(value);
+   }
+   function fandbManagerChange(value){
+      $("#FoodvebrageManagerHidden").val(value);
+   }
+   function clientlaunchManagerChange(value){
+      $("#clientlauncherManagerHidden").val(value);
+   }
+
+
+   function checkComms(){
+    if($("#Communication").is(":checked")){
+      $("#commsManagerView").show();
+    }else{
+      $("#commsManagerView").hide();
+    }
+   }
+
+   function checkConcierge(){
+    if($("#Concierge").is(":checked")){
+      $("#ConciergeManagerView").show();
+    }else{
+      $("#ConciergeManagerView").hide();
+    }
+   }
+
+   function checkEvents(){
+    if($("#Events").is(":checked")){
+      $("#EventsManagerView").show();
+    }else{
+      $("#EventsManagerView").hide();
+    }
+   }
+
+  function checkfacility(){
+    if($("#Facility").is(":checked")){
+      $("#FacilityManagerView").show();
+    }else{
+      $("#FacilityManagerView").hide();
+    }
+   }
+   
+   function checkF_B(){
+    if($("#F_B").is(":checked")){
+      $("#F_BManagerView").show();
+    }else{
+      $("#F_BManagerView").hide();
+    }
+   }
+
+   function checkF_B(){
+    if($("#F_B").is(":checked")){
+      $("#F_BManagerView").show();
+    }else{
+      $("#F_BManagerView").hide();
+    }
+   }
+
+   function checkSecurity(){
+    if($("#Security").is(":checked")){
+      $("#SecurityManagerView").show();
+    }else{
+      $("#SecurityManagerView").hide();
+    }
+   }
+function checkSecurityinteger(){
+    if($("#Securityineger").is(":checked")){
+      $("#SecurityIntegerManagerView").show();
+    }else{
+      $("#SecurityIntegerManagerView").hide();
+    }
+   }
+   function checkUI_CONFIG(){
+    if($("#UI_CONFIG").is(":checked")){
+      $("#UI_CONFIGManagerView").show();
+    }else{
+      $("#UI_CONFIGManagerView").hide();
+    }
+   }
+
+
+</script>
+
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+function datevalidate(){
+var startDate = $("#startDate").val();
+var endDate = $("#endDate").val();
+if(startDate!='')
+    if(Date.parse(startDate) > Date.parse(endDate)){
+   alert("Invalid Date Range");
+return false;
+}
+else {
+  return true;
+}
+}
+  $(function(){
+
+   $( "#startDate" ).datepicker({dateFormat:'mm/dd/y'});
+    $( "#endDate" ).datepicker({dateFormat:'mm/dd/y'})
+
+    });
+
+  function toggleEmail(value){
+    if(value=='yes'){
+      $(".haveEmail").show();
+    }else{
+      $(".haveEmail").hide();
+    }
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+
+        <h2 class="page-header">Register</h2>
+        {{#if errors}}
+              {{#each errors}}
+                <div class="alert alert-danger">{{msg}}</div>
+              {{/each}}
+        {{/if}}
+        <form method="post" action="/users/register">
+           <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="Name" name="firstname">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Name" name="lastname">
+          </div>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="title">
+          </div>
+          
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="ptext" class="form-control" placeholder="Phone Number" name="phone">
+          </div>
+          
+           <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password">
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password2">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+
+
+</div>
+    </div>
+
+
+    <div id="bg">
+  <img src="/image/taj-mahal-images-high-resolution-wallpaper-1.jpg" alt="">
+</div>
+
+<style>
+.login_wrapper {
+    padding: 10px;
+    right: 0;
+    margin: 5% auto 0;
+    max-width: 350px;
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    color: #232222;
+}
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+</style>

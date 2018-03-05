@@ -1,0 +1,1137 @@
+[
+    {
+        "_id__$oid": "5a5886b7a27c2103ff73f074",
+        "title": "Root",
+        "scope": "WsRoot",
+        "isProject": "False",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f075",
+        "title": "1 Main Street",
+        "parentId": "5a5886b7a27c2103ff73f074",
+        "scope": "WsFolder",
+        "isProject": "True",
+        "project__createdDate": "2018-01-12T09:58",
+        "project__endDate": "2018-01-12T09:58",
+        "project__startDate": "2018-01-12T09:58",
+        "project__status": "Green",
+        "project__ownerIds__$oid": "59f77e492e7ceb2b6021e195",
+        "project__authorId__$oid": "59f77e492e7ceb2b6021e195",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f076",
+        "title": "Phase 1: v1 Discovery",
+        "parentId": "5a5886c8a27c2103ff73f075",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f077",
+        "title": "Phase2: v1 Alpha (Technical Testing)",
+        "parentId": "5a5886c8a27c2103ff73f075",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f078",
+        "title": "Phase3: v1 Beta(Internal Release & Testing)",
+        "parentId": "5a5886c8a27c2103ff73f075",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f079",
+        "title": "AlphaSetup",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f07a",
+        "title": "UIConfig",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f07b",
+        "title": "Security",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f07c",
+        "title": "F&B",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f07d",
+        "title": "Breadcrumb(AsApplicable)",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f07e",
+        "title": "Facilities",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f07f",
+        "title": "Events",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f080",
+        "title": "Comms",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f081",
+        "title": "Concierge",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f082",
+        "title": "Alpha Testing & Feedback",
+        "parentId": "5a5886c8a27c2103ff73f077",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f083",
+        "title": "Feature Targets (questionnaire)",
+        "parentId": "5a5886c8a27c2103ff73f076",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f084",
+        "title": "UI Custom Config",
+        "parentId": "5a5886c8a27c2103ff73f076",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f085",
+        "title": "Security Environment Assessment",
+        "parentId": "5a5886c8a27c2103ff73f076",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f086",
+        "title": "F&B Environment Assessment",
+        "parentId": "5a5886c8a27c2103ff73f076",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f087",
+        "title": "Facilities Booking Environment Assessment",
+        "parentId": "5a5886c8a27c2103ff73f076",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f088",
+        "title": "Event Environment Assessment",
+        "parentId": "5a5886c8a27c2103ff73f076",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f089",
+        "title": "CommsNeedAssessment",
+        "parentId": "5a5886c8a27c2103ff73f076",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f08a",
+        "title": "ConciergeNeedsAssessment",
+        "parentId": "5a5886c8a27c2103ff73f076",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f090",
+        "title": "Alpha Update to Beta(Setup)",
+        "parentId": "5a5886c8a27c2103ff73f078",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f091",
+        "title": "BetaTesting&Feedback",
+        "parentId": "5a5886c8a27c2103ff73f078",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f092",
+        "title": "BetaUpdatetoRelease",
+        "parentId": "5a5886c8a27c2103ff73f078",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f09c",
+        "title": "HID",
+        "parentId": "5a5886c8a27c2103ff73f07b",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f09d",
+        "title": "WALTZ",
+        "parentId": "5a5886c8a27c2103ff73f07b",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f09e",
+        "title": "OTHER",
+        "parentId": "5a5886c8a27c2103ff73f07b",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0ca",
+        "title": "Security",
+        "parentId": "5a5886c8a27c2103ff73f090",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0cb",
+        "title": "F&B",
+        "parentId": "5a5886c8a27c2103ff73f090",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0cc",
+        "title": "Facilities",
+        "parentId": "5a5886c8a27c2103ff73f090",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0cd",
+        "title": "Events",
+        "parentId": "5a5886c8a27c2103ff73f090",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0ce",
+        "title": "Comms",
+        "parentId": "5a5886c8a27c2103ff73f090",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0cf",
+        "title": "Concierge",
+        "parentId": "5a5886c8a27c2103ff73f090",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0d7",
+        "title": "Access Hardware Environment",
+        "parentId": "5a5886c8a27c2103ff73f085",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0d8",
+        "title": "ACS Platform",
+        "parentId": "5a5886c8a27c2103ff73f085",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0d9",
+        "title": "VMS System",
+        "parentId": "5a5886c8a27c2103ff73f085",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0de",
+        "title": "Breadcrumb(AsApplicable)",
+        "parentId": "5a5886c8a27c2103ff73f0cb",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0e6",
+        "title": "HID",
+        "parentId": "5a5886c8a27c2103ff73f0ca",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0e7",
+        "title": "WALTZ",
+        "parentId": "5a5886c8a27c2103ff73f0ca",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5886c8a27c2103ff73f0e8",
+        "title": "OTHER",
+        "parentId": "5a5886c8a27c2103ff73f0ca",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d48",
+        "title": "asher test building",
+        "parentId": "5a5886b7a27c2103ff73f074",
+        "scope": "WsFolder",
+        "isProject": "True",
+        "project__createdDate": "2018-01-12T21:53",
+        "project__endDate": "2018-01-12T21:53",
+        "project__startDate": "2018-01-12T21:53",
+        "project__status": "Green",
+        "project__ownerIds__$oid": "59f77e492e7ceb2b6021e195",
+        "project__authorId__$oid": "59f77e492e7ceb2b6021e195",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d49",
+        "title": "Phase 1: v1 Discovery",
+        "parentId": "5a592e48bbb18f06e9457d48",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d4a",
+        "title": "Phase2: v1 Alpha (Technical Testing)",
+        "parentId": "5a592e48bbb18f06e9457d48",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d4b",
+        "title": "Phase3: v1 Beta(Internal Release & Testing)",
+        "parentId": "5a592e48bbb18f06e9457d48",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d4c",
+        "title": "Alpha Update to Beta(Setup)",
+        "parentId": "5a592e48bbb18f06e9457d4b",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d4d",
+        "title": "BetaTesting&Feedback",
+        "parentId": "5a592e48bbb18f06e9457d4b",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d4e",
+        "title": "BetaUpdatetoRelease",
+        "parentId": "5a592e48bbb18f06e9457d4b",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d4f",
+        "title": "Feature Targets (questionnaire)",
+        "parentId": "5a592e48bbb18f06e9457d49",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d50",
+        "title": "UI Custom Config",
+        "parentId": "5a592e48bbb18f06e9457d49",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d51",
+        "title": "Security Environment Assessment",
+        "parentId": "5a592e48bbb18f06e9457d49",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d52",
+        "title": "F&B Environment Assessment",
+        "parentId": "5a592e48bbb18f06e9457d49",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d53",
+        "title": "Facilities Booking Environment Assessment",
+        "parentId": "5a592e48bbb18f06e9457d49",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d54",
+        "title": "Event Environment Assessment",
+        "parentId": "5a592e48bbb18f06e9457d49",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d55",
+        "title": "CommsNeedAssessment",
+        "parentId": "5a592e48bbb18f06e9457d49",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d56",
+        "title": "ConciergeNeedsAssessment",
+        "parentId": "5a592e48bbb18f06e9457d49",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d57",
+        "title": "AlphaSetup",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d58",
+        "title": "UIConfig",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d59",
+        "title": "Security",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d5a",
+        "title": "F&B",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d5b",
+        "title": "Breadcrumb(AsApplicable)",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d5c",
+        "title": "Facilities",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d5d",
+        "title": "Events",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d5e",
+        "title": "Comms",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d5f",
+        "title": "Concierge",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d60",
+        "title": "Alpha Testing & Feedback",
+        "parentId": "5a592e48bbb18f06e9457d4a",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d61",
+        "title": "Security",
+        "parentId": "5a592e48bbb18f06e9457d4c",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d62",
+        "title": "F&B",
+        "parentId": "5a592e48bbb18f06e9457d4c",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d63",
+        "title": "Facilities",
+        "parentId": "5a592e48bbb18f06e9457d4c",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d64",
+        "title": "Events",
+        "parentId": "5a592e48bbb18f06e9457d4c",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d65",
+        "title": "Comms",
+        "parentId": "5a592e48bbb18f06e9457d4c",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d66",
+        "title": "Concierge",
+        "parentId": "5a592e48bbb18f06e9457d4c",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d7b",
+        "title": "HID",
+        "parentId": "5a592e48bbb18f06e9457d59",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d7c",
+        "title": "WALTZ",
+        "parentId": "5a592e48bbb18f06e9457d59",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d7d",
+        "title": "OTHER",
+        "parentId": "5a592e48bbb18f06e9457d59",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d80",
+        "title": "Access Hardware Environment",
+        "parentId": "5a592e48bbb18f06e9457d51",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d81",
+        "title": "ACS Platform",
+        "parentId": "5a592e48bbb18f06e9457d51",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d82",
+        "title": "VMS System",
+        "parentId": "5a592e48bbb18f06e9457d51",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d95",
+        "title": "HID",
+        "parentId": "5a592e48bbb18f06e9457d61",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d96",
+        "title": "WALTZ",
+        "parentId": "5a592e48bbb18f06e9457d61",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457d97",
+        "title": "OTHER",
+        "parentId": "5a592e48bbb18f06e9457d61",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a592e48bbb18f06e9457da5",
+        "title": "Breadcrumb(AsApplicable)",
+        "parentId": "5a592e48bbb18f06e9457d62",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f109fe982af6b114cb",
+        "title": "My Test Building",
+        "parentId": "5a5886b7a27c2103ff73f074",
+        "scope": "WsFolder",
+        "isProject": "True",
+        "project__createdDate": "2018-01-14T01:52",
+        "project__endDate": "2018-01-14T01:52",
+        "project__startDate": "2018-01-14T01:52",
+        "project__status": "Green",
+        "project__ownerIds__$oid": "59f77e492e7ceb2b6021e195",
+        "project__authorId__$oid": "59f77e492e7ceb2b6021e195",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f109fe982af6b114cc",
+        "title": "Phase 1: v1 Discovery",
+        "parentId": "5a5ab7f109fe982af6b114cb",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f109fe982af6b114cd",
+        "title": "Phase2: v1 Alpha (Technical Testing)",
+        "parentId": "5a5ab7f109fe982af6b114cb",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f109fe982af6b114ce",
+        "title": "Phase3: v1 Beta(Internal Release & Testing)",
+        "parentId": "5a5ab7f109fe982af6b114cb",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114cf",
+        "title": "AlphaSetup",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d0",
+        "title": "UIConfig",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d1",
+        "title": "Security",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d2",
+        "title": "F&B",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d3",
+        "title": "Breadcrumb(AsApplicable)",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d4",
+        "title": "Facilities",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d5",
+        "title": "Events",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d6",
+        "title": "Comms",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d7",
+        "title": "Concierge",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d8",
+        "title": "Alpha Testing & Feedback",
+        "parentId": "5a5ab7f109fe982af6b114cd",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114d9",
+        "title": "Feature Targets (questionnaire)",
+        "parentId": "5a5ab7f109fe982af6b114cc",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114da",
+        "title": "UI Custom Config",
+        "parentId": "5a5ab7f109fe982af6b114cc",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114db",
+        "title": "Security Environment Assessment",
+        "parentId": "5a5ab7f109fe982af6b114cc",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114dc",
+        "title": "F&B Environment Assessment",
+        "parentId": "5a5ab7f109fe982af6b114cc",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114dd",
+        "title": "Facilities Booking Environment Assessment",
+        "parentId": "5a5ab7f109fe982af6b114cc",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114de",
+        "title": "Event Environment Assessment",
+        "parentId": "5a5ab7f109fe982af6b114cc",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114df",
+        "title": "CommsNeedAssessment",
+        "parentId": "5a5ab7f109fe982af6b114cc",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114e0",
+        "title": "ConciergeNeedsAssessment",
+        "parentId": "5a5ab7f109fe982af6b114cc",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114e1",
+        "title": "Alpha Update to Beta(Setup)",
+        "parentId": "5a5ab7f109fe982af6b114ce",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114e2",
+        "title": "BetaTesting&Feedback",
+        "parentId": "5a5ab7f109fe982af6b114ce",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114e3",
+        "title": "BetaUpdatetoRelease",
+        "parentId": "5a5ab7f109fe982af6b114ce",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114f1",
+        "title": "HID",
+        "parentId": "5a5ab7f209fe982af6b114d1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114f2",
+        "title": "WALTZ",
+        "parentId": "5a5ab7f209fe982af6b114d1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b114f3",
+        "title": "OTHER",
+        "parentId": "5a5ab7f209fe982af6b114d1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11502",
+        "title": "Security",
+        "parentId": "5a5ab7f209fe982af6b114e1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11503",
+        "title": "F&B",
+        "parentId": "5a5ab7f209fe982af6b114e1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11504",
+        "title": "Facilities",
+        "parentId": "5a5ab7f209fe982af6b114e1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11505",
+        "title": "Events",
+        "parentId": "5a5ab7f209fe982af6b114e1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11506",
+        "title": "Comms",
+        "parentId": "5a5ab7f209fe982af6b114e1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11507",
+        "title": "Concierge",
+        "parentId": "5a5ab7f209fe982af6b114e1",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b1150f",
+        "title": "HID",
+        "parentId": "5a5ab7f209fe982af6b11502",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11510",
+        "title": "WALTZ",
+        "parentId": "5a5ab7f209fe982af6b11502",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11511",
+        "title": "OTHER",
+        "parentId": "5a5ab7f209fe982af6b11502",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b1151d",
+        "title": "Access Hardware Environment",
+        "parentId": "5a5ab7f209fe982af6b114db",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b1151e",
+        "title": "ACS Platform",
+        "parentId": "5a5ab7f209fe982af6b114db",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b1151f",
+        "title": "VMS System",
+        "parentId": "5a5ab7f209fe982af6b114db",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a5ab7f209fe982af6b11523",
+        "title": "Breadcrumb(AsApplicable)",
+        "parentId": "5a5ab7f209fe982af6b11503",
+        "scope": "WsFolder",
+        "isProject": "False",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": ""
+    }
+]

@@ -1,0 +1,385 @@
+<body class="nav-md">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+  <style type="text/css">
+  .padding-left{
+    padding-left: 10px;
+  }
+  </style>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+        <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active"><a href ="/projects/projects">Project</a></li>
+                    <li class="breadcrumb-item active"><a href ="/">Milestone</a></li>
+
+                    <li class="breadcrumb-item active" aria-current="page">Create New Task</li>
+                </ol>
+            </nav>
+       
+
+        <div class="clearfix"></div>
+
+        {{> notifications }}
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Create New Task</h3>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="row">
+                    <div class="col-md-12 col-xs-12  widget_tally_box col-lg-12">
+                          <form class="form form-horizontal" method="POST" action="/folders/createtasks">
+                            <div class="form-group row col-md-12   ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Task Name</label>
+                              <div class="col-sm-6">
+                                <input type="text" class="form-control" name="title" id="title" placeholder="Task Name..."  value="{{{ taskdetails.title}}}" required="required">
+                                <input type="hidden" name="folderId" id="folderId" value="{{{folderId}}}">
+                                <input type="hidden" name="projectId" id="projectId" value="{{{projectId}}}">
+                                <input type="hidden" name="milestoneId" id="milestoneId" value="{{{milestoneId}}}">
+                              </div>
+                            </div>
+
+                           <div class="form-group row col-md-12   ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Description</label>
+                              <div class="col-sm-6">
+                                <input type="text" name="description" value="{{{ taskdetails.description}}}" class="form-control">
+                                </div>
+                            </div>
+
+                             <div class="form-group row col-md-12   ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Parent Folder</label>
+                              <div class="col-sm-6">
+                               <div id="jstree">
+                                  <!-- in this example the tree is populated from inline HTML -->
+                                  {{{ jstreeContent }}}
+                                </div>
+                                </div>
+                            </div>
+
+               <div class="form-group row col-md-12">
+        <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Visible Task Name</label>
+        <div class="col-sm-6">
+        <input type="text" name="visible_task_name" value="{{{ taskdetails.visible_task_name}}}" class="form-control" id="vtname">
+       </div>
+       </div>
+       <div class="form-group col-md-12">
+        <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Steps</label>
+        <div class="col-sm-6">
+        <input type="text" name="steps" value="{{{ taskdetails.steps}}}" class="form-control" id="steps">
+       </div>
+       </div>
+       <div class="form-group col-md-12">
+        <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Documentation</label>
+        <div class="col-sm-6">
+        <input type="text" name="Documentation" value="{{{ taskdetails.Documentation}}}" class="form-control" id="Documentation">
+       </div>
+       </div>
+       <div class="form-group col-md-12">
+        <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Weak Day</label>
+        <div class="col-sm-6">
+        <input type="text" name="weakday" value="{{{ taskdetails.weakday}}}" class="form-control" id="weakday">
+       </div>
+       </div>
+       <div class="form-group col-md-12">
+        <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Hours</label>
+        <div class="col-sm-6">
+        <input type="text" name="hours" value="{{{ taskdetails.hours}}}" class="form-control" id="hours">
+       </div>
+       </div>
+       <div class="form-group col-md-12">
+        <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Folder Location</label>
+        <div class="col-sm-6">
+        <input type="text" name="folder_location" value="{{{ taskdetails.folder_location}}}" class="form-control" id="folder_location">
+       </div>
+       </div>
+       <div class="form-group col-md-12">
+        <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Time Spent</label>
+        <div class="col-sm-6">
+        <input type="text" name="time_spent" value="{{{ taskdetails.time_spent}}}" class="form-control" id="time_spent">
+       </div>
+       </div>
+       <div class="form-group col-md-12">
+        <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Constrant</label>
+        <div class="col-sm-6">
+        <input type="text" name="start_date_constrant" value="{{{ taskdetails.start_date_constrant}}}" class="form-control" id="start_date_constrant">
+       </div>
+       </div>
+     
+                            <div class="form-group row col-md-12   ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Start Date</label>
+                              <div class="col-sm-6">
+                                <input type="text" class="form-control" name="startDate" value="{{{ taskdetails.startDate}}}" id="startDate" placeholder="mm/dd/yy">
+                              </div>
+                            </div>
+
+                            <div class="form-group row col-md-12   ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right">End Date</label>
+                              <div class="col-sm-6">
+                                <input type="text" class="form-control" name="due" value="{{{ taskdetails.due}}}" id="due" placeholder="mm/dd/yy">
+                              </div>
+                            </div>
+
+                            {{!-- <div class="form-group row col-md-12   ">
+                              <label for="project_name" class="pull-left col-form-label col-md-3 text-right">Roles</label>
+                              <div class="col-sm-6">
+                                {{#each roles as |role roleId|}}
+                                    <input type="checkbox" value="{{{role._id}}}" name="roles"> {{{role.title}}}
+                                {{/each}}
+                              </div>
+                            </div> --}}
+                                    
+                            <div class="form-group row col-md-12   ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Assignee</label>
+                              <div class="col-sm-6">
+                                <select name="authorIds" class="form-control" id="assigneeChange">
+                                  {{{contactsDropdownHTML}}}
+                                </select>           
+                              </div>
+                            </div>
+
+                            <div class="form-group row col-md-12   ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right" >Dependencies</label>
+                              <div class="col-sm-6">
+                                <select id="dependencies" name="dependencies" class="multiselect-ui form-control" multiple="multiple" style="min-height:200px;">
+                                  {{{dependenciesDropdownHtml}}}
+                                </select>           
+                              </div>
+                            </div>
+
+
+                            <div class="form-group row col-md-12 ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Attachment</label>
+                              <div class="col-sm-6">
+                                <input type="hidden" name="attachement" value="" id="attachement">
+                                <button type="button" class="btn btn-default" id="pick">Browse Files from Google Drive</button> 
+
+                                <div id="attachment_display"></div>          
+                              </div>
+                            </div>
+
+                            <div class="form-group row col-md-12 ">
+                              <label for="task_name" class="pull-left col-form-label col-md-3 text-right">Status</label>
+                              <div class="col-sm-6">
+                                <select name="status" class="form-control" id="status">
+                              <option value="null">select</option>
+                              <option value="Active">In progress</option>
+                              <option value="Upcoming">Upcoming</option>
+                              <option value="Completed">Completed</option>
+                            </select>        
+                              </div>
+                            </div>
+
+                          
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 text-center">
+                              <button class="btn btn-primary">Create</button>
+                            </div>
+                          </form>
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="clearfix"></div>
+                      <div id="placeholder"></div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+<div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content" align="center">
+       <div class="login_wrapper" align="center">
+         <h2 class="page-header">Add new Register</h2>
+           {{#if errors}}
+             {{#each errors}}
+              <div class="alert alert-danger">{{msg}}</div>
+            {{/each}}
+           {{/if}}
+        <form method="post" action="/users/userFolderRegister" align ="center">
+          <div class="form-group row col-md-12" align="center">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" align="right">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" align="center">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="title" align="center">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Username</label>
+            <input type="text" class="form-control" placeholder="Username" name="username" align="center">
+          </div>
+           
+            <div class="form-group row col-md-12">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password" align="center">
+          </div>
+                            
+          <div class="form-group row col-md-12">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password2" align="center" />
+            <input type="hidden" placeholder="" name="taskId" align="center" value ="{{{taskID}}}">
+            <input type="hidden"  placeholder="" name="title" align="center" value="" id ="titleHidden">
+            <input type="hidden" placeholder="" name="description" align="center" value ="" id ="descriptionHidden">
+            <input type="hidden"  placeholder="" name="startDate" align="center" value ="" id ="startDateHidden">
+            <input type="hidden"  placeholder="" name="due" align="center" value ="" id ="duehidden">
+            <input type="hidden"  placeholder="" name="status" align="center" value =""
+            id ="statusHidden">
+           
+
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="button" class="btn btn-right" data-dismiss="modal">Close</button>
+        </form>
+       
+          
+        
+      </div>
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+
+
+
+<script src="/js/filepicker.js"></script>
+  <script>
+    function initPicker() {
+      var picker = new FilePicker({
+        apiKey: 'AIzaSyDL2PCa-Hwx4eptVzJfLHY9Ihq0goWV_JQ',
+        clientId: '361479185010-ch9r99j6uhv1ajpobj5eh4cc0m1uvesm',
+        buttonEl: document.getElementById('pick'),
+        onSelect: function(file) {
+          console.log(file);
+          $("#attachement").val(JSON.stringify(file));
+          $("#attachment_display").html('<a href="'+file.alternateLink+'" target="_blank">'+file.title+'</a>');
+          //alert('Selected file is : ' + file.title);
+        }
+      }); 
+    }
+  </script>
+<script type="text/javascript">
+    $(window).load(function() {
+       $("#assigneeChange").change(function(){
+         console.log($("#assigneeChange").val());
+         if($("#assigneeChange").val()=="null"){
+          $('#myModal').modal('show');
+          $("#titleHidden").val($("#title").val());
+          $("#descriptionHidden").val($("#description").val());
+          $("#startDateHidden").val($("#startDate").val());
+          $("#endDateHidden").val($("#endDate").val());
+          $("#statusHidden").val($("#status").val());
+         }
+       });    
+    });
+</script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#startDate" ).datepicker({dateFormat:'dd/mm/y'});
+    $( "#due" ).datepicker({dateFormat:'dd/mm/y'});
+
+    // 6 create an instance when the DOM is ready
+    $('#jstree').jstree();
+    // 7 bind to events triggered on the tree
+    $('#jstree').on("changed.jstree", function (e, data) {
+      console.log(data.selected);
+      $("#folderId").val(data.selected);
+      var projectId = null;
+      var increment = 0;
+      for(var item in data.node.parents){
+        increment++;
+        if((increment+1) == data.node.parents.length){
+          projectId = data.node.parents[item];
+          $("#projectId").val(projectId);
+          console.log("project", data.node.parents[item]);
+        }
+        if((increment+2) == data.node.parents.length){
+          milestoneId = data.node.parents[item];
+          $("#milestoneId").val(milestoneId);
+          console.log(data.node.parents[item]);
+        }
+        
+      }
+    });
+    
+  });
+  </script>
+  
+  <script src="https://www.google.com/jsapi?key=AIzaSyDL2PCa-Hwx4eptVzJfLHY9Ihq0goWV_JQ"></script>
+  <script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
+
+</body>
+</html>

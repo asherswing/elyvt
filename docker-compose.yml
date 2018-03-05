@@ -1,0 +1,17 @@
+version: "2"
+services:
+  elevate:
+    container_name: elevate
+    restart: always
+    build: .
+    ports:
+      - "81:81"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./database:/database/db
+    ports:
+      - "27017:27017"

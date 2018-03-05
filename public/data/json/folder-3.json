@@ -1,0 +1,1681 @@
+[
+    {
+        "_id__$oid": "5a291e05d2ae994d8c83a4a6",
+        "id": "IEABRGBFI7777777",
+        "title": "Root",
+        "childIds": "IEABRGBFI4FW5MB7",
+        "scope": "WsRoot",
+        "__v": "0.0"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG5FA"
+    },
+    {
+        "childIds": "IEABRGBFI4FVFHHR"
+    },
+    {
+        "childIds": "IEABRGBFI4ETXPVI"
+    },
+    {
+        "childIds": "IEABRGBFI4ETXQW6"
+    },
+    {
+        "childIds": "IEABRGBFI4EVE4AV"
+    },
+    {
+        "childIds": "IEABRGBFI4FW5MCG"
+    },
+    {
+        "childIds": "IEABRGBFI4FXIP7J"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4da"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f8e"
+    },
+    {
+        "_id__$oid": "5a291e05d2ae994d8c83a4a7",
+        "id": "IEABRGBFI7777776",
+        "title": "Recycle Bin",
+        "childIds": "IEABRGBFI4EVG6CR",
+        "scope": "RbRoot",
+        "__v": "0"
+    },
+    {
+        "childIds": "IEABRGBFI4EVE4AY"
+    },
+    {
+        "childIds": "IEABRGBFI4EXAGB5"
+    },
+    {
+        "childIds": "IEABRGBFI4EVE7CD"
+    },
+    {
+        "childIds": "IEABRGBFI4EVE7CA"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG6CB"
+    },
+    {
+        "childIds": "IEABRGBFI4EVE7CB"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG6CG"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG6CE"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG6CL"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG6CJ"
+    },
+    {
+        "childIds": "IEABRGBFI4FVFJYJ"
+    },
+    {
+        "childIds": "IEABRGBFI4FPI4BI"
+    },
+    {
+        "childIds": "IEABRGBFI4EXAGBO"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG6CN"
+    },
+    {
+        "childIds": "IEABRGBFI4EVE6VS"
+    },
+    {
+        "childIds": "IEABRGBFI4FVFHXT"
+    },
+    {
+        "childIds": "IEABRGBFI4EXAF6W"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG6BZ"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG5FD"
+    },
+    {
+        "childIds": "IEABRGBFI4EVE6DE"
+    },
+    {
+        "childIds": "IEABRGBFI4EVE7BK"
+    },
+    {
+        "childIds": "IEABRGBFI4EXAF6K"
+    },
+    {
+        "childIds": "IEABRGBFI4FVY7BB"
+    },
+    {
+        "childIds": "IEABRGBFI4EVG5TN"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4a8",
+        "title": "Communication",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4a9",
+        "title": "Conceirge",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4aa",
+        "title": "Events",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4ab",
+        "title": "Facility Booking",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4ac",
+        "title": "F&B",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4ad",
+        "title": "Security",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4ae",
+        "title": "UI Config",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4af",
+        "title": "Feature",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4a8",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4a9"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4aa"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4ab"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4ac"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4ad"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4ae"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b0",
+        "title": "Landlord",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b1",
+        "title": "Tenant",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b2",
+        "title": "Communication Environment Assessment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4b0",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4b1"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b3",
+        "title": "Landlord Concierge Needs",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b4",
+        "title": "Tenant Concierge Needs",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b5",
+        "title": "Concierge Environment Assessment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4b3",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4b4"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b6",
+        "title": "ID/Intro Key Contact",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0.0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b7",
+        "title": "ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0.0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b8",
+        "title": "Events Environment Assessment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4b6",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4b7"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4b9",
+        "title": "Landlord ID Booking System",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4ba",
+        "title": "Tenant ID Booking System",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4bb",
+        "title": "F&B Environment Assessment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4b6",
+        "__v": "0.0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4b7"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4bc",
+        "title": "Landlord F&B Workflow Structure/Walkthrough",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4bd",
+        "title": "Landlord ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4be",
+        "title": "Tenant F&B Workflow Structure/Walkthrough",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4bf",
+        "title": "Tenant ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c0",
+        "title": "Facilities Booking Environment Assessment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4bc",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4bd"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4be"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4bf"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c1",
+        "title": "Landlord ID Corp ISP & WiFi Environments",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c2",
+        "title": "Landlord ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c3",
+        "title": "Landlord ID Mobile Carrier & Device(s)",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c4",
+        "title": "Onsite Testing (?)",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c5",
+        "title": "Tenant: ID Corp Eml Environment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c6",
+        "title": "Tenant: ID Corp Eml Environment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c7",
+        "title": "Tenant: ID Corp ISP & WiFi Environments",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4c1",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4c2"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4c3"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4c4"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4c5"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4c6"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c8",
+        "title": "Access Hardware Environment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0.0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4c9",
+        "title": "ACS Platform",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0.0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4ca",
+        "title": "VMS Platform",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0.0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4cb",
+        "title": "Tenant: ID ACS System",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4cc",
+        "title": "Security Environment Assessment",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4c8",
+        "__v": "0.0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4c9"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4ca"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4cd",
+        "title": "Tenant ID VMS System",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4ce",
+        "title": "Request: BB Bldg Imagery",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4cf",
+        "title": "UI Custom Config",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4cd",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4ce"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d0",
+        "title": "Discovery",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4b2",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4b5"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4b8"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4bb"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4c0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4c7"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4cc"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4cf"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d1",
+        "title": "Alpha Setup",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a55d56eaef5d3516ef69b4a",
+        "__v": "0.0"
+    },
+    {
+        "childIds": "5a55dcb802ec1eb7db26c7ad"
+    },
+    {
+        "childIds": "5a55dd2902ec1eb7db26c7ae"
+    },
+    {
+        "childIds": "5a55dd6402ec1eb7db26c7af"
+    },
+    {
+        "childIds": "5a55ddc002ec1eb7db26c7b0"
+    },
+    {
+        "childIds": "5a55dde302ec1eb7db26c7b1"
+    },
+    {
+        "childIds": "5a55de0a02ec1eb7db26c7b2"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d2",
+        "title": "Alpha Testing & Feedback",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0.0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d3",
+        "title": "Alpha Update to Beta",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d4",
+        "title": "Alpha",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4d1",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4d2"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4d3"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d5",
+        "title": "Beta Setup",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d6",
+        "title": "Beta Testing",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d7",
+        "title": "Beta Update to Release",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d8",
+        "title": "Beta",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a291e1dd2ae994d8c83a4d5",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4d6"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4d7"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4d9",
+        "title": "Release",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a291e1dd2ae994d8c83a4da",
+        "title": "1 Main Street",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "projectManager": "KUADLS3D",
+        "childIds": "5a291e1dd2ae994d8c83a4af",
+        "project__createdDate": "2017-12-20T13:10",
+        "project__endDate": "2017-12-20T13:10",
+        "project__startDate": "2017-12-20T13:10",
+        "project__status": "Green",
+        "project__ownerIds__$oid": "59f77e492e7ceb2b6021e195",
+        "project__authorId__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0.0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4d0"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4d4"
+    },
+    {
+        "childIds": "5a291e1dd2ae994d8c83a4d9"
+    },
+    {
+        "childIds": "5a55f139115522d3048ea6fb"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f5c",
+        "title": "Communication",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f5d",
+        "title": "Conceirge",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f5e",
+        "title": "Events",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f5f",
+        "title": "Facility Booking",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f60",
+        "title": "F&B",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f61",
+        "title": "Security",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f62",
+        "title": "UI Config",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f63",
+        "title": "Feature",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f5c",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f5d"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f5e"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f5f"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f60"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f61"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f62"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f64",
+        "title": "Landlord",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f65",
+        "title": "Tenant",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f66",
+        "title": "Communication Environment Assessment",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f64",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f65"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f67",
+        "title": "Landlord Concierge Needs",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f68",
+        "title": "Tenant Concierge Needs",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f69",
+        "title": "Concierge Environment Assessment",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f67",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f68"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f6a",
+        "title": "Landlord Event Needs",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f6b",
+        "title": "Tenant Event Needs",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f6c",
+        "title": "Events Environment Assessment",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f6a",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f6b"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f6d",
+        "title": "Landlord ID Booking System",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f6e",
+        "title": "Tenant ID Booking System",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f6f",
+        "title": "Facilities Booking Environment Assessment",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f6a",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f6b"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f70",
+        "title": "Landlord F&B Workflow Structure/Walkthrough",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f71",
+        "title": "Landlord ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f72",
+        "title": "Tenant F&B Workflow Structure/Walkthrough",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f73",
+        "title": "Tenant ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f74",
+        "title": "Facilities Booking Environment Assessment",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f70",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f71"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f72"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f73"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f75",
+        "title": "Landlord ID Corp ISP & WiFi Environments",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f76",
+        "title": "Landlord ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f77",
+        "title": "Landlord ID Mobile Carrier & Device(s)",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f78",
+        "title": "Onsite Testing (?)",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f79",
+        "title": "Tenant: ID Corp Eml Environment",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f7a",
+        "title": "Tenant: ID Corp Eml Environment",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f7b",
+        "title": "Tenant: ID Corp ISP & WiFi Environments",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f75",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f76"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f77"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f78"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f79"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f7a"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f7c",
+        "title": "Tenant: ID Mobile Carrier & Devices",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f7d",
+        "title": "Landlord ID ACS System",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f7e",
+        "title": "Landlord ID VMS System",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f7f",
+        "title": "Tenant: ID ACS System",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f80",
+        "title": "Security Environment Assessment",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f7c",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f7d"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f7e"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f73"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f81",
+        "title": "Tenant ID VMS System",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f82",
+        "title": "Request: BB Bldg Imagery",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f83",
+        "title": "UI Custom Config",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f81",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f82"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f84",
+        "title": "Discovery",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f66",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f69"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f6c"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f6f"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f74"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f7b"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f80"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f83"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f85",
+        "title": "Alpha Setup",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f86",
+        "title": "Alpha Testing",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f87",
+        "title": "Alpha Update to Beta",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f88",
+        "title": "Alpha",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f85",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f86"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f87"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f89",
+        "title": "Beta Setup",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f8a",
+        "title": "Beta Testing",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f8b",
+        "title": "Beta Update to Release",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f8c",
+        "title": "Beta",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "childIds": "5a3aa7335e460b0e2ede5f89",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f8a"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f8b"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f8d",
+        "title": "Release",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a3aa7335e460b0e2ede5f8e",
+        "title": "Test",
+        "user__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "projectManager": "KUADLS3D",
+        "childIds": "5a3aa7335e460b0e2ede5f63",
+        "project__createdDate": "2017-12-20T18:08",
+        "project__endDate": "2017-12-20T18:08",
+        "project__startDate": "2017-12-20T18:08",
+        "project__status": "Green",
+        "project__ownerIds__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "project__authorId__$oid": "5a3aa68d5e460b0e2ede5f5b",
+        "scope": "WsFolder",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f84"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f88"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f8c"
+    },
+    {
+        "childIds": "5a3aa7335e460b0e2ede5f8d"
+    },
+    {
+        "_id__$oid": "5a55d56eaef5d3516ef69b4a",
+        "title": "UI Config",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "__v": "0.0"
+    },
+    {
+        "_id__$oid": "5a55dcb802ec1eb7db26c7ad",
+        "title": "Security",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a55e40d0579c089dcacfb0f",
+        "__v": "0.0"
+    },
+    {
+        "childIds": "5a55e47e0579c089dcacfb10"
+    },
+    {
+        "childIds": "5a55e4a50579c089dcacfb11"
+    },
+    {
+        "_id__$oid": "5a55dd2902ec1eb7db26c7ae",
+        "title": "F&B",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55dd6402ec1eb7db26c7af",
+        "title": "Facilities",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder",
+        "__v": "0.0"
+    },
+    {
+        "_id__$oid": "5a55ddc002ec1eb7db26c7b0",
+        "title": "Events",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55dde302ec1eb7db26c7b1",
+        "title": "Comms",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55de0a02ec1eb7db26c7b2",
+        "title": "Concierge",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55e40d0579c089dcacfb0f",
+        "title": "HID",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55e47e0579c089dcacfb10",
+        "title": "WALTZ",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55e4a50579c089dcacfb11",
+        "title": "OTHER",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55efdf115522d3048ea6f6",
+        "title": "HID",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f01f115522d3048ea6f7",
+        "title": "WALTZ",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f054115522d3048ea6f8",
+        "title": "OTHERS",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f09b115522d3048ea6f9",
+        "title": "Security",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a55efdf115522d3048ea6f6",
+        "scope": "WsFolder"
+    },
+    {
+        "childIds": "5a55f01f115522d3048ea6f7"
+    },
+    {
+        "childIds": "5a55f054115522d3048ea6f8"
+    },
+    {
+        "_id__$oid": "5a55f0e2115522d3048ea6fa",
+        "title": "Beta Setup",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a55f09b115522d3048ea6f9",
+        "__v": "0.0"
+    },
+    {
+        "childIds": "5a55f2fe115522d3048ea6fc"
+    },
+    {
+        "childIds": "5a55f381a14cc7ce2e64b47b"
+    },
+    {
+        "childIds": "5a55f3cda14cc7ce2e64b47c"
+    },
+    {
+        "childIds": "5a55f3f3a14cc7ce2e64b47d"
+    },
+    {
+        "childIds": "5a55f427a14cc7ce2e64b47e"
+    },
+    {
+        "childIds": "5a55f44ca14cc7ce2e64b47f"
+    },
+    {
+        "_id__$oid": "5a55f139115522d3048ea6fb",
+        "title": "Beta",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "childIds": "5a55f0e2115522d3048ea6fa",
+        "__v": "0.0"
+    },
+    {
+        "childIds": "5a55f54b97d4a375f5bde12d"
+    },
+    {
+        "childIds": "5a55f61197d4a375f5bde12e"
+    },
+    {
+        "_id__$oid": "5a55f2fe115522d3048ea6fc",
+        "title": "UI Config",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f381a14cc7ce2e64b47b",
+        "title": "F&B",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f3cda14cc7ce2e64b47c",
+        "title": "Facilites",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f3f3a14cc7ce2e64b47d",
+        "title": "Events",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f427a14cc7ce2e64b47e",
+        "title": "Comms",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f44ca14cc7ce2e64b47f",
+        "title": "Concierge",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f54b97d4a375f5bde12d",
+        "title": "Beta Testing & Feedback",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a55f61197d4a375f5bde12e",
+        "title": "Beta Update to Release",
+        "user__$oid": "59fb4c444df99e7c5518e758",
+        "scope": "WsFolder"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639e5",
+        "title": "Communication",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639e6",
+        "title": "Conceirge",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639e7",
+        "title": "Events",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639e8",
+        "title": "Facility Booking",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639e9",
+        "title": "F&B",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639ea",
+        "title": "Security",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639eb",
+        "title": "UI Config",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639ec",
+        "title": "Feature",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a566719b34cda3f54e639e5",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639e6"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639e7"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639e8"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639e9"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639ea"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639eb"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639ed",
+        "title": "Landlord",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639ee",
+        "title": "Tenant",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639ef",
+        "title": "Communication Environment Assessment",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a566719b34cda3f54e639ed",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639ee"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639f0",
+        "title": "Landlord Concierge Needs",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639f1",
+        "title": "Tenant Concierge Needs",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639f2",
+        "title": "Concierge Environment Assessment",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a566719b34cda3f54e639f0",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639f1"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639f3",
+        "title": "Landlord Event Needs",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639f4",
+        "title": "Tenant Event Needs",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639f5",
+        "title": "Events Environment Assessment",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a566719b34cda3f54e639f3",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639f4"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639f6",
+        "title": "Landlord ID Booking System",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a566719b34cda3f54e639f7",
+        "title": "Tenant ID Booking System",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e639f8",
+        "title": "Facilities Booking Environment Assessment",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a566719b34cda3f54e639f3",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639f4"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e639f9",
+        "title": "Landlord F&B Workflow Structure/Walkthrough",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e639fa",
+        "title": "Landlord ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e639fb",
+        "title": "Tenant F&B Workflow Structure/Walkthrough",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e639fc",
+        "title": "Tenant ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e639fd",
+        "title": "Facilities Booking Environment Assessment",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a56671ab34cda3f54e639f9",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e639fa"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e639fb"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e639fc"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e639fe",
+        "title": "Landlord ID Corp ISP & WiFi Environments",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e639ff",
+        "title": "Landlord ID POS/Inventory Management System(s) (IMS)",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a00",
+        "title": "Landlord ID Mobile Carrier & Device(s)",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a01",
+        "title": "Onsite Testing (?)",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a02",
+        "title": "Tenant: ID Corp Eml Environment",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a03",
+        "title": "Tenant: ID Corp Eml Environment",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a04",
+        "title": "Tenant: ID Corp ISP & WiFi Environments",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a56671ab34cda3f54e639fe",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e639ff"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a00"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a01"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a02"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a03"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a05",
+        "title": "Tenant: ID Mobile Carrier & Devices",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a06",
+        "title": "Landlord ID ACS System",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a07",
+        "title": "Landlord ID VMS System",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a08",
+        "title": "Tenant: ID ACS System",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a09",
+        "title": "Security Environment Assessment",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a56671ab34cda3f54e63a05",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a06"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a07"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e639fc"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a0a",
+        "title": "Tenant ID VMS System",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a0b",
+        "title": "Request: BB Bldg Imagery",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a0c",
+        "title": "UI Custom Config",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a56671ab34cda3f54e63a0a",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a0b"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a0d",
+        "title": "Discovery",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a566719b34cda3f54e639ef",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639f2"
+    },
+    {
+        "childIds": "5a566719b34cda3f54e639f5"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e639f8"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e639fd"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a04"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a09"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a0c"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a0e",
+        "title": "Alpha Setup",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a0f",
+        "title": "Alpha Testing",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a10",
+        "title": "Alpha Update to Beta",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a11",
+        "title": "Alpha",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a56671ab34cda3f54e63a0e",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a0f"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a10"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a12",
+        "title": "Beta Setup",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a13",
+        "title": "Beta Testing",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a14",
+        "title": "Beta Update to Release",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a15",
+        "title": "Beta",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a56671ab34cda3f54e63a12",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a13"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a14"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a16",
+        "title": "Release",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "__v": "0",
+        "projectId__$oid": "5a56671ab34cda3f54e63a17"
+    },
+    {
+        "_id__$oid": "5a56671ab34cda3f54e63a17",
+        "title": "asher building",
+        "user__$oid": "59f77e492e7ceb2b6021e195",
+        "childIds": "5a566719b34cda3f54e639ec",
+        "projectManager____-": "KUADLS3D",
+        "project__createdDate": "2018-01-10T19:18",
+        "project__endDate": "2018-01-10T19:18",
+        "project__startDate": "2018-01-10T19:18",
+        "project__status": "Green",
+        "project__ownerIds__$oid": "59f77e492e7ceb2b6021e195",
+        "project__authorId__$oid": "59f77e492e7ceb2b6021e195",
+        "scope": "WsFolder",
+        "__v": "0"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a0d"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a11"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a15"
+    },
+    {
+        "childIds": "5a56671ab34cda3f54e63a16"
+    },
+    {
+        "_id__$oid": ""
+    }
+]

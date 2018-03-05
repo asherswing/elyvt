@@ -1,0 +1,149 @@
+ <body class="nav-md">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+
+       
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+         <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">me</li>
+                </ol>
+            </nav>
+       
+
+        <div class="login_wrapper">
+
+        <h2 class="page-header">My Details</h2>
+        
+        {{#if success_msg}}
+              <div class="alert alert-success">{{success_msg}}</div>
+        {{/if}}
+        {{#if errors}}
+              {{#each errors}}
+                <div class="alert alert-danger">{{msg}}</div>
+              {{/each}}
+        {{/if}}
+        <form method="post">
+           <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" value ="{{{ userDetails.firstname }}}">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" value ="{{{ userDetails.lastname }}}">
+          </div>
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" placeholder="Username" name="username" value ="{{{ userDetails.username }}}">
+          </div>
+           <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email" value ="{{{ userDetails.email }}}">
+          </div>
+                    
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="ptext" class="form-control" placeholder="Phone Number" name="phone" value ="{{{ userDetails.phone }}}">
+          </div>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="title" value ="{{{ userDetails.title }}}">
+          </div>
+          <div class="form-group row col-md-12">
+                              <label for="project_name" class="pull-left col-form-label col-md-2 text-right">Roles</label>
+                              <div class="col-sm-8">
+                                
+                                     {{{roles}}}
+                               
+                              </div>
+                              </div>
+          <div class="form-group">
+            
+            <div class="col-sm-6">
+            {{{noemailhtml}}}<label >No Email</label>
+            </div>
+      </div>
+      </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+
+            </div>
+          </div>
+
+          
+          
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+
+  <script src="/vendors/plotly/js/plotly-latest.min.js"></script>
+  <script src="/vendors/plotly/js/numeric.min.js"></script>
+  
+
+
+  
+  <script>
+
+
+  /**
+  Contacts
+  **/
+
+
+  var contactsData = ''
+
+  
+
+  //console.log(contactsHTML)
+  //document.getElementById('contactsHTMLDIV').innerHTML += contactsHTML
+
+  </script>
+
+  
+</body>
+</html>
+
+    

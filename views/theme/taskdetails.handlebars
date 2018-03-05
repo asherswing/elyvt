@@ -1,0 +1,432 @@
+  <body class="nav-md">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <div class="container body">
+      <div class="main_container_db">
+        {{> sidebar }}
+        
+        <div class="right_col_db" role="main">
+
+          <!-- top navigation!41 -->
+          {{> topbar }}
+          <!-- /top navigation -->
+
+          {{> notifications }}
+
+          <!-- page content -->
+          <div class="main_cont" role="main">
+              <nav aria-label="breadcrumb" role="navigation">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/">Home</a></li>
+                      <li class="breadcrumb-item active"><a href="/?id={{projectData._id}}">{{projectData.title}}</a></li>
+                      <li class="breadcrumb-item active"><a href="/edit/folderdata/?id={{milestoneData._id}}">{{milestoneData.title}}</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">{{{ taskdetails.title}}}</li>
+                  </ol>
+              </nav>
+              <div class="clearfix"></div>
+              
+           <div class="col-md-8">
+            
+            <div class="col-md-12">
+              <div id="taskDetails" class="well well-sm" style="font-size:16px; padding:20px">
+
+    <form action="/tasks/task/update" id="taskDetailsForm" method="post" onsubmit="return datevalidate()" name="taskcreat">
+       <input type="hidden" name="taskId" value="{{{ taskdetails._id}}}" class="form-control">
+       <input type="hidden" name="ProjectName" value="{{{ projectData.title}}}" class="form-control">
+       <input type="hidden" name="TaskName" value="{{{ milestoneData.title}}}" class="form-control">
+       <div class="col-md-12 col-xs-12">
+        <label class="title">Title</label>
+        <input type="text" name="title" value="{{{ taskdetails.title}}}" class="form-control" id="title">
+       </div>
+       <div class="col-md-12 col-xs-12">
+        <label class="title">Primary Description</label>
+        <input type="text" name="description" value="{{{ taskdetails.description}}}" class="form-control" id="description">
+       </div>
+       <div class="col-md-12 col-xs-12">
+        <label class="title">Visible Task Name</label>
+        <input type="text" name="visible_task_name" value="{{{ taskdetails.visible_task_name}}}" class="form-control" id="vtname">
+       </div>
+       
+       <div class="col-md-12 col-xs-12">
+        <label class="title">Documentation</label>
+        <input type="text" name="Documentation" value="{{{ taskdetails.Documentation}}}" class="form-control" id="Documentation">
+       </div>
+      
+        
+       
+       <div class="col-xs-12 col-md-12">
+          <label for="task_name" class="">Start Date</label>
+          
+            <input type="text" class="form-control" name="startDate" id="startDate" value="{{{ taskdetails.dates.start}}}" class="form-control datepicker">
+          </div>
+       
+
+       <div class="col-xs-12 col-md-12">
+        
+          <label for="task_name" class="">End Date</label>
+          
+            <input type="text" class="form-control" name="due" id="due"  value="{{{ taskdetails.dates.due}}}" class="form-control datepicker">
+          </div>
+        
+
+        
+        {{!-- <div class="form-group col-md-12   ">
+          <label for="project_name" class="col-form-label">Roles</label>
+          <div class="col-sm-12 row">
+            {{#each roles as |role roleId|}}
+                <input type="checkbox" value="{{{role._id}}}" name="roles"> {{{role.title}}}
+            {{/each}}
+          </div>
+        </div>
+ --}}
+         <div class="col-xs-12 col-md-12">
+          <label for="task_name" class="col-form-label">Status</label>
+          <select name="status" class="form-control" id="status">
+              {{{taskStatusOptions}}}
+            </select>           
+          </div>
+        
+        
+
+        <div class="col-xs-12 col-md-12">
+          <label for="task_name" class="col-form-label">Assignee</label>
+          <select name="authorIds" class="form-control"  id="assigneeChange">
+              {{{contactsDropdownHTML}}}
+            </select>           
+          </div>
+        
+
+        <div class="col-md-12 col-xs-12  ">
+          <label for="task_name" class="pull-left col-form-label">Dependencies</label>
+          
+            <select id="dependencies" name="dependencies" class="multiselect-ui form-control" multiple="multiple" style="min-height:200px;">
+              {{{dependenciesDropdownHtml}}}
+          </select>           
+          </div>
+        
+
+        <div class="col-md-12 col-xs-12" style="padding-top:20px;">
+          <label for="task_name" class="pull-left col-form-label">Attachment</label>
+          
+            <input type="hidden" name="attachement" value="{{taskdetails.attachents}}" id="attachement">
+            <button type="button" class="btn btn-default" id="pick">Browse Files from Google Drive</button> 
+
+          </div>
+
+          <div id="attachment_display"><a href="{{attachents.alternateLink}}" target="_blank">{{attachents.title}}</a></div>
+        
+        <div class="col-md-12 col-xs-12">
+        <label class="title">Email</label>
+        <select id="email" name="email" class=" form-control" onchange="toggleEmail(this.value)">
+              {{{emailDropdownHtml}}}
+          </select>   
+       </div>
+
+       <div class="col-md-12 haveEmail">
+        <label class="title">Email Subject</label>
+        <input type="text" name="emailSubject" value="{{{ taskdetails.emailSubject}}}" class="form-control" id="folder_location">
+       </div>
+
+       <div class="col-md-12 haveEmail" >
+        <label class="title">Email Body</label>
+        <textarea  name="emailBody" class="form-control">{{{ taskdetails.emailBody}}}</textarea> 
+       </div>
+
+
+
+        <div class="clearfix">&nbsp;</div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-success">Update</button>
+          <a href="/tasks/delete/?id={{{ taskdetails._id}}}" class="btn btn-danger pull-right">Delete Task</a>
+        </div>
+
+    </form>
+      
+              </div>
+            </div>
+
+            </div>
+
+            <div class="col-md-4 pull-left text-center well-sm well col-xs-12">
+                
+          <label for="task_name" class="col-form-label">Status</label>
+          <div class="clearfix"></div>
+            <div class="col-sm-12 col-xs-12">
+            <select name="status" class="form-control" id="status">
+              {{{taskStatusOptions}}}
+            </select>           
+          </div>
+              </div>
+
+        
+
+
+          <div class="qa-container col-md-12 col-xs-12">
+            <div class="well well-sm">
+              <h3>Questions</h3>
+              <form class="" method="post" action="/tasks/task/createquestions">
+                <input type="hidden" name="taskId" value="{{{ taskdetails._id}}}">
+                <div class="col-md-12 col-xs-12">Question: <input type="text" name="question" placeholder="Question..." class="form-control" /></div>
+                <input type="hidden" name="answer" class="form-control"/></div>
+                <div class="col-md-12"><button type="Submit" class="btn btn-primary btn-sm">Submit</button></div>
+              </form>
+            </div>
+          </div>
+
+          <div class=" qa-container  col-md-12 col-xs-12">
+            <h3>Answers</h3>
+            <table class="table table-responsive">
+              <tr>
+                <th>Questions</th>
+                <th>Answers</th>
+              </tr>
+            {{#each QuestionAnswersData}}
+              <tr>
+                <td>{{this.question}}</td>
+                <td>{{this.answer}}</td>
+              </tr>
+            {{/each}}
+          </table>
+          </div>
+        </div>
+        
+        <!-- /page content -->
+
+        <!-- footer content -->
+        
+        <!-- /footer content -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content" align="center">
+       <div class="login_wrapper" align="center">
+         <h2 class="page-header">Add new Register</h2>
+           {{#if errors}}
+             {{#each errors}}
+              <div class="alert alert-danger">{{msg}}</div>
+            {{/each}}
+           {{/if}}
+        <form method="post" action="/users/userFolderRegister" align ="center">
+          <div class="form-group row col-md-12" align="center">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" align="right">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" align="center">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="title" align="center">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Username</label>
+            <input type="text" class="form-control" placeholder="Username" name="username" align="center">
+          </div>
+           
+            <div class="form-group row col-md-12">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password" align="center">
+          </div>
+                            
+          <div class="form-group row col-md-12">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password2" align="center" />
+            <input type="hidden" placeholder="" name="taskId" align="center" value ="{{{taskID}}}">
+            <input type="hidden"  placeholder="" name="title" align="center" value="" id ="titleHidden">
+            <input type="hidden" placeholder="" name="description" align="center" value ="" id ="descriptionHidden">
+            <input type="hidden"  placeholder="" name="startDate" align="center" value ="" id ="startDateHidden">
+            <input type="hidden"  placeholder="" name="due" align="center" value ="" id ="duehidden">
+            <input type="hidden"  placeholder="" name="status" align="center" value =""
+            id ="statusHidden">
+           
+
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="button" class="btn btn-right" data-dismiss="modal">Close</button>
+        </form>
+       
+          
+        
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+
+  <style>
+  .well-sm{
+    background-color: #fff;
+  }
+  </style>
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap-multiselect.js"></script>
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+
+  <script src="/vendors/plotly/js/plotly-latest.min.js"></script>
+  <script src="/vendors/plotly/js/numeric.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script src="/js/filepicker.js"></script>
+  <script>
+    function initPicker() {
+      var picker = new FilePicker({
+        apiKey: 'AIzaSyDL2PCa-Hwx4eptVzJfLHY9Ihq0goWV_JQ',
+        clientId: '361479185010-ch9r99j6uhv1ajpobj5eh4cc0m1uvesm',
+        buttonEl: document.getElementById('pick'),
+        onSelect: function(file) {
+          console.log(file);
+          $("#attachement").val(JSON.stringify(file));
+          $("#attachment_display").html('<a href="'+file.alternateLink+'" target="_blank">'+file.title+'</a>');
+          //alert('Selected ' + file.title);
+        }
+      }); 
+    }
+
+  //   function assigneeChange(){
+  //   $("#myModal").model();
+  // }
+  </script>
+  <script type="text/javascript">
+    $(window).load(function() {
+       $("#assigneeChange").change(function(){
+         console.log($("#assigneeChange").val());
+         if($("#assigneeChange").val()=="null"){
+          $('#myModal').modal('show');
+          $("#titleHidden").val($("#title").val());
+          $("#descriptionHidden").val($("#description").val());
+          $("#startDateHidden").val($("#startDate").val());
+          $("#endDateHidden").val($("#endDate").val());
+          $("#statusHidden").val($("#status").val());
+         }
+       });    
+    });
+</script>
+
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+  <script type="text/javascript">
+
+  jQuery.validator.addMethod("dateCompare", function(value, element){
+    $startDate = moment($("#startDate").val().format('MM/DD/YY'));
+    $endDate = moment($("#due").val().format('MM/DD/YY'));
+    if($endDate.isSameOrAfter($startDate)){
+      return false;
+    }else{
+      return true;
+    }
+  });
+$(function() {
+  $("form[name='taskcreat']").validate({
+    
+    rules: {
+      
+      title: "required",
+      startDate: "required",
+      due: "required",
+    },
+    
+    messages: {
+      title: "Please Enter your Title",
+      startDate: "Please Enter your Start Date",
+     due: "Please Enter your End Date",
+    },
+    
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+$(document).ready(function () {
+
+    $('#taskDetailsForm').validate({ // initialize the plugin
+        rules: {
+            title: {
+                required: true,
+            },
+            endDate: {
+                required: true,
+                dateCompare: true
+            }
+        }
+    });
+
+});
+ function datevalidate(){
+var startDate = $("#startDate").val();
+var endDate = $("#due").val();
+if(startDate!='')
+    if(Date.parse(startDate) > Date.parse(endDate)){
+   alert("Invalid Date Range");
+return false;
+}
+else {
+  return true;
+}
+}
+  $(function(){
+    var emailOption = "{{{emailOption}}}";
+    $( "#startDate" ).datepicker({dateFormat:'mm/dd/y'});
+    $( "#due" ).datepicker({dateFormat:'mm/dd/y'})
+    if(emailOption=='yes'){
+      toggleEmail(emailOption);
+    }else{
+      toggleEmail(emailOption);
+    }
+  });
+
+  function toggleEmail(value){
+    if(value=='yes'){
+      $(".haveEmail").show();
+    }else{
+      $(".haveEmail").hide();
+    }
+  }
+ 
+
+$(document).ready(function(){
+  var folderId = "{{{taskdetails.parentFolderIds}}}";
+  //console.log("narendra", folderId);
+  $('#'+folderId).addClass("active");
+  $('#'+folderId).parentsUntil( ".menu_section" ).addClass('active').css('display', 'block');
+})
+
+
+// function validator(){
+//   $startDate = moment($("#startDate").val().format('MM/DD/YYYY');
+//   $endDate = moment($("#endDate").val().format('MM/DD/YYYY');
+//   if($endDate.isSameOrAfter($startDate)){
+
+//   }
+// }
+</script>
+
+  
+  <script src="https://www.google.com/jsapi?key=AIzaSyDL2PCa-Hwx4eptVzJfLHY9Ihq0goWV_JQ"></script>
+  <script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
+
+</body>
+</html>

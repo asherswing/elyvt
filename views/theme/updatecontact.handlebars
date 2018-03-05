@@ -1,0 +1,143 @@
+ <body class="nav-md">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+
+       
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+         <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href ="/contact/list">Contact</a></li>
+                </ol>
+            </nav>
+       
+
+      
+
+        <h2 class="page-header">Edit Contact</h2>
+        {{#if errors}}
+              {{#each errors}}
+                <div class="alert alert-danger">{{msg}}</div>
+              {{/each}}
+        {{/if}}
+        <form method="post">
+           <div class="form-group col-md-6">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" value ="{{{ alluserdetails.firstname }}}">
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" value ="{{{ alluserdetails.lastname }}}">
+          </div>
+          <div class="clearfix"></div> 
+           <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email" value ="{{{ alluserdetails.email }}}">
+          </div>
+           <div class="clearfix"></div>         
+          <div class="form-group col-md-6">
+            <label>Phone Number</label>
+            <input type="ptext" class="form-control" placeholder="Phone Number" name="phone" value ="{{{ alluserdetails.phone }}}">
+          </div>
+          <div class="clearfix"></div>
+          
+          <div class="clearfix"></div>
+          <div class="form-group  col-md-12" style="padding-right: 10px;">
+
+                              <label for="project_name" class="pull-left " style="padding-right: 10px;">Roles</label>
+                              <div class="col-sm-6">
+                                
+                                     {{{roles}}}
+                               
+                              </div>
+                              </div>
+          <div class="form-group">
+            
+            <div class="col-sm-6">
+            {{{noemailhtml}}}<label style="padding-right: 10px;">No Email</label>
+            </div>
+		  </div>
+      </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+
+            </div>
+          
+
+          
+          
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+
+  <script src="/vendors/plotly/js/plotly-latest.min.js"></script>
+  <script src="/vendors/plotly/js/numeric.min.js"></script>
+  
+
+
+  
+  <script>
+
+
+  /**
+  Contacts
+  **/
+
+
+  var contactsData = ''
+
+  
+
+  //console.log(contactsHTML)
+  //document.getElementById('contactsHTMLDIV').innerHTML += contactsHTML
+
+  </script>
+
+  
+</body>
+</html>
+
+    

@@ -1,0 +1,1100 @@
+<body class="nav-md">
+  <style>
+    .dataTables_wrapper {
+      margin-top: 30px;
+    }
+
+    .milestone-chart {
+      height: 200px;
+    }
+
+    .milestone-progress {
+      padding: 20px 20px 0px 20px;
+    }
+
+    .milestone-progress .progress {
+      width: 100%
+    }
+
+    .small-chart > div {
+      height: 100px;
+    }
+    .widget{
+      display: none;
+      overflow: auto;
+    }
+    .startDate, .endDate{
+      background-color: rgba(0,0,0,0);
+    }
+  </style>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+       <!-- top tiles -->
+       <div class="top_nav tb_t" >
+
+        {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+       </div>
+       <!-- /top tiles -->
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                {{#if projectName}}
+                  <li class="breadcrumb-item active">Projects</li>
+                  <li class="breadcrumb-item active" aria-current="page">{{projectName}}</li> 
+                {{/if}}                   
+            </ol>
+        </nav>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Weekly Critical Path Dashboard</h3>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="">
+                    <div class="col-md-12 col-xs-12  widget_tally_box col-lg-12">
+                      <div class="col-md-3 col-xs-12  widget_tally_box col-lg-3">
+                        <div class="row  " id="tasks-left-panel">
+                          {{{folderDashboardData.folderDashboardleftMenuHTML}}}
+                          <!--Left Panel tasks Info-->
+                        </div>
+                      </div>
+
+                      <!--center col-->
+                      <div class="col-md-9 col-sm-12 col-xs-12 col-lg-9">
+                        <!--Weekly Critical Path-->
+
+                        {{#if folderDashboardData.foldersweeklyCriticalDatesHTML.hastasks}}
+                        <div class="x_panel">
+                          <div class="x_title">
+                            <h2>Weekly Critical Path <small>Dashboard</small></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+
+                            </ul>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="x_content">
+                            <table class="table table-bordered">
+                              {{{folderDashboardData.foldersweeklyCriticalDatesHTML.tasks}}}
+                            </table>
+                          </div>
+                        </div>
+                        {{/if}}
+
+                        {{!-- <div class="x_panel">
+                          <div class="x_title" style="overflow:auto">
+                            <h2>Project </h2>
+                            <select class="col-md-3" name="projects" onchange="dashboardRedirect(this.value)" style="padding:5px;margin-left:10px">
+                              {{{projectsDropdown}}}
+                            </select>
+                          </div>
+                          <div class="x_content">
+                            
+                          </div>
+                        </div> --}}
+                      
+                        <div class="x_panel">
+                          <div class="x_title">
+                            <h2>Milestones</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+
+                            </ul>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="x_content">
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Project</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <select id='project-selector' class="form-control">
+                                </select>
+                              </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class='row'>
+                              <div class='milestone-progress'>
+                                <div class='progress'>
+                                  <div id='ms-progress' class="progress-bar progress-bar-success"style="width: 95%;">95%</div>
+                                </div>
+                              </div>
+                              <div class='col-md-12 col-sm-12 col-xs-12 milestone-chart'>
+                                <canvas id='allTasks'></canvas>
+                              </div>
+                              <div class='clearfix'></div>
+                              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 small-chart'>
+                                <div><canvas id='taskTypes'></canvas></div>
+                              </div>
+                              <div class='clearfix'></div>
+                            </div>
+                            <table class="table table-bordered " id="Milestones-tables">
+                              <thead>
+                                <tr>
+                                  <th>Milestone</th>
+                                  <th>Project</th>
+                                  <th>Start Date</th>
+                                  <th>End Date</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        
+
+                        <!--Upcoming Tasks-->
+                        <div class="x_panel">
+                          <div class="x_title">
+                            <h2>Upcoming Tasks </h2>
+                              <ul class="nav navbar-right panel_toolbox">
+                                {{!-- <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li> --}}
+                                {{!-- <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                  <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                  </ul>
+                                </li> --}}
+                                {{!-- <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li> --}}
+                              </ul>
+                              <div class="clearfix"></div>
+                          </div>
+                          <div class="x_content">
+                            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 small-chart'>
+                              <div><canvas id='upcomingTasks'></canvas></div>
+                            </div>
+                            <div class='clearfix'></div>
+                            <table class="table table-bordered" id="upcomingTasks-table">
+                              <thead>
+                                <tr>                                  
+                                  <th style="width: 57%;">Task</th>
+                                  <th>Project</th>
+                                  <th >Assignee</th>
+                                  <th >Start Date</th>
+                                  <th >End Date</th>
+                                  <th >Days Left</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <!-- /Upcoming Tasks -->
+                        
+
+                       
+                        <!--Completed Tasks-->
+                        <div class="x_panel">
+                          <div class="x_title">
+                            <h2>Completed Tasks <small id="completedTasksTotal"></small></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                              {{!-- <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                              </li> --}}
+                              {{!-- <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#">Settings 1</a>
+                                  </li>
+                                  <li><a href="#">Settings 2</a>
+                                  </li>
+                                </ul>
+                              </li> --}}
+                              {{!-- <li><a class="close-link"><i class="fa fa-close"></i></a>
+                              </li> --}}
+                            </ul>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="x_content">
+                            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 small-chart'>
+                              <div><canvas id='activeTasks'></canvas></div>
+                            </div>
+                            <div class='clearfix'></div>
+                            <table class="table table-bordered" id="completedTaskstable">
+                              <!-- Completed Tasks Table Body -->
+                              <thead>
+                                <tr>
+                                  <th>Task</th>
+                                  <th>Project</th>
+                                  <th>Milestone</th>
+                                  <th>Assignee</th>
+                                  <th>Start Date</th>
+                                  <th>End Date</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <!-- /Completed Tasks -->
+
+                        <!--Risk Report-->
+                        <div class="x_panel">
+                          <div class="x_title">
+                            <h2>Risk Report </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                              {{!-- <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                              </li> --}}
+                              {{!-- <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#">Settings 1</a>
+                                  </li>
+                                  <li><a href="#">Settings 2</a>
+                                  </li>
+                                </ul>
+                              </li> --}}
+                              {{!-- <li><a class="close-link"><i class="fa fa-close"></i></a>
+                              </li> --}}
+                            </ul>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="x_content">
+                            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 small-chart'>
+                              <div><canvas id='overdueTasks'></canvas></div>
+                            </div>
+                            <div class='clearfix'></div>
+                            <table class="table table-bordered" id="overdueTaskstable">
+                              <!-- Risk Report / Overdue Table body -->
+                              <thead>
+                                <tr>
+                                  <th>Milestone</th>
+                                  <th>Project</th>
+                                  <th>Assignee</th>
+                                  <th>Start Date</th>
+                                  <th>End Date</th>
+                                  <th>Days Past Due</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <!-- /Risk Report -->
+
+
+
+                       
+                        </div>
+                        
+
+
+                        <!--right col-->
+                        {{!-- <div class="col-md-12 col-xs-12  col-lg-2">
+                          <div class="row">
+
+                            <div class="x_panel  widget">
+                              <div class="x_title" style="  ">
+                                <ul class="nav navbar-right panel_toolbox" style="margin-right:-7px; */  min-width: 50px;">
+                                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                  </li>
+
+                                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                  </li>
+                                </ul>
+                                <div class="title_tast">Shortcuts</div>
+
+                                <div class="clearfix"></div>
+                              </div>
+                              <div class="x_content">
+                                <div >
+                                  {{{folderDashboardData.folderDashboardRightShortcutHTML}}}
+                                </div>
+                              </div>
+                            </div>
+
+
+                          </div>
+                        </div> --}}
+                      </div>
+                      <div class="clearfix"></div>
+
+
+                      <div class="clearfix"></div>
+
+
+
+                      {{!-- <div class="gantt-container col-md-8" style="overflow: scroll; margin-top: -36px;width:1200px;height:400px">
+                        <H3>Gantt Chart</H3>
+                        <svg id="gantt" ></svg>
+                      </div> --}}
+
+
+                      <div id="placeholder"></div>
+
+
+
+
+
+                      <div class="clearfix"></div>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+
+            </div>
+          </div>
+
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <script>
+  // initalise variables
+
+  function dashboardRedirect(value){
+    window.location.href="/?id="+value;
+  }
+  
+  // $(window).load(function(){
+  //   $('#Milestones-tables').DataTable({
+  //       "order": [ 1, "desc" ]
+  //   });
+  //   $('#completedTaskstable').DataTable({
+  //       "order": [1, "desc" ]
+  //   });
+  //   $("#overdueTaskstable").DataTable({
+  //       "order": [ 1, "desc" ]
+  //   });
+  //   $("#upcomingTasks-table").DataTable({
+  //     "order": [ 1, "desc" ]
+  //   })
+  // });
+
+  let milestoneTable
+  let completedTaskstable
+  let overdueTasksTable
+  
+  var tasks = {{{tasks}}}
+  var projects = {{{projects}}}
+  var folders = {{{folders}}}
+  var contacts = ({{{contacts}}}).data
+  var projectId = "{{{projectId}}}";
+
+  var completedTasks = tasks.filter(task => (task.status === 'Completed')&&(task.project != null))
+  var activeTasks = tasks.filter(task => (task.status === 'Active')&&(task.project != null))
+  var planned = tasks.filter(task => (task.status === 'Upcoming')&&(task.project != null))
+  var backlog = tasks.filter(task => (task.status === 'backlog')&&(task.project != null))
+
+  var overdueTasks = tasks.filter(task => task.status === 'Active' && (task.project != null) && moment(task.dates.due,'MM/DD/YY').isBefore(moment()))
+
+  var upcomingTasks = tasks.filter(task => task.status === 'Upcoming' && (task.project != null) && moment(task.dates.due,'MM/DD/YY').isAfter(moment()))
+
+  const getTasksPerType = (projectId) => {
+    const subset = projectId === 'all' ? tasks :
+      tasks.filter(task => task.project._id === projectId)
+
+    return subset.reduce((acc, task) => {
+      acc[task.dates.type] = acc[task.dates.type] ? acc[task.dates.type] + 1 : 1
+
+      return acc;
+    }, {})
+  }
+
+  let selectedProjects = projects
+
+  $(window).load(() => {
+    milestoneTable = $('#Milestones-tables').DataTable();
+    completedTasksTable = $('#completedTaskstable').DataTable();
+    overdueTasksTable = $("#overdueTaskstable").DataTable();  
+    upcomingTasksTable = $("#upcomingTasks-table").DataTable();
+
+    if((projectId != null)&&(projectId!="undefined") &&(projectId!="")){
+      changeProject(projectId, '{{{ projectName }}}')      
+    }else{
+      changeProject('all');
+    }
+    
+  });
+
+
+  var projectOptions = projects.reduce((acc, project) => {
+    var projectDropdown =  `${acc}<option value='${project._id}'`
+    if(project._id == projectId){
+      projectDropdown += `selected`
+    }
+    projectDropdown += `>${project.title}</option>`
+    return projectDropdown;
+  }, '<option value="all">All Active Projects</option><option value="allPlanned">All Planned Project</option><option value="allCompleted">All Completed Projects</option>')
+
+  $('#project-selector').html(projectOptions)
+
+  var chartallTasks = document.getElementById("allTasks").getContext("2d");
+  var chartTasksAC = document.getElementById("activeTasks").getContext("2d");
+  var plannedTasksChartCanvas = document.getElementById("taskTypes").getContext("2d");
+  var overdueTasksAC = document.getElementById("overdueTasks").getContext("2d");
+  var upcomingTasksAC = document.getElementById("upcomingTasks").getContext("2d");
+
+  
+
+  function findProject(folderId) {
+    const folder = folders.find(folder => folderId === folder._id)
+
+    if (folder.isProject) return folder
+
+    else return findProject(folder.parentId)
+  }
+
+function findMilestone(folderId) {
+    const folder = folders.find(folder => folderId === folder._id)
+    return folder
+  }
+
+
+
+
+  var allTasksPerProject = tasks.reduce((acc, task) => {
+    for (var i = 0; i < 12; i++) {
+      var month = moment().month(i)
+      var monthName = month.format('MMMM')
+
+      if (!acc[monthName]) acc[monthName] = {}
+
+      if (task.status === 'Upcoming') {
+        if (moment(task.dates.end).isSame(month, 'month')) {
+          if((task.project != null)){
+          var project = task.project.title
+
+          acc[monthName][project] = acc[monthName][project] ? acc[monthName][project] + 1 : 1
+          }
+        }
+      }
+    }
+    return acc
+  }, {})
+
+  const getMilestones = (projectId) => {
+    if (projectId === 'all') {
+      return projects.reduce((acc, project) => {
+        const milestones = folders.filter(folder => folder.parentId == project._id)
+
+        return acc.concat(milestones)
+      }, [])
+    }
+
+    if (projectId === 'allPlanned') {
+      console.log(projects);
+      return projects.reduce((acc, project) => {
+        const milestones = folders.filter(folder => (folder.parentId == project._id && 'Upcoming' == project.status))
+        return acc.concat(milestones)
+      }, [])
+    }
+
+    if (projectId === 'allCompleted') {
+      return projects.reduce((acc, project) => {
+        const milestones = folders.filter(folder => (folder.parentId == project._id && 'Completed' == project.status))
+        return acc.concat(milestones)
+      }, [])
+    }
+
+    return folders.filter(folder => folder.parentId == projectId)
+  }
+
+  const getAssignee = (task) => {
+    return contacts.find(contact => task.user[0] === contact.id)
+  }
+
+  const getCompletedTasks = (projectId) => {
+    if (projectId === 'all') {
+      return completedTasks
+    }
+
+    if(projectId === 'allPlanned'){
+      return completedTasks.filter(task => (task.project.status==='Upcoming'))
+    }
+
+    if(projectId === 'allCompleted'){
+      return completedTasks.filter(task => (task.project.status==='Completed'))
+    }
+
+    return completedTasks.filter(task => task.project._id === projectId)
+  }
+
+  const getActiveTasks = (projectId) => {
+    if (projectId === 'all') {
+      return activeTasks
+    }
+
+    if (projectId === 'allPlanned') {
+      console.log(projectId);
+      return activeTasks.filter(task => ((task.project.status === 'Upcoming')))
+    }
+
+    if (projectId === 'allCompleted') {
+      return activeTasks.filter(task => ((task.project.status === 'Completed')))
+    }
+    return activeTasks.filter(task => task.project._id === projectId)
+  }
+
+  const getBacklogTasks = (projectId) => {
+    if (projectId === 'all') {
+      return backlog
+    }
+    if (projectId === 'allPlanned') {
+      return backlog.filter(task => (task.project.status === 'Upcoming')&& task.project.isDeleted != true)
+    }
+
+    if (projectId === 'allCompleted') {
+      return backlog.filter(task => (task.project.status === 'Completed') && task.project.isDeleted != true )
+    }
+
+    return backlog.filter(task => task.project._id === projectId && task.project.isDeleted != true)
+  }
+
+  const getPlannedTasks = (projectId) => {
+    if (projectId === 'all') {
+      return planned
+    }
+
+    if (projectId === 'allPlanned') {
+      return planned.filter(task => (task.project.status==='Upcoming') && task.project.isDeleted != true)
+    }
+
+    if (projectId === 'allCompleted') {
+      return planned.filter(task => (task.project.status==='Completed') && task.project.isDeleted != true)
+    }
+
+    return planned.filter(task => task.project._id === projectId && task.project.isDeleted != true)
+  }
+
+  const getOverdueTasks = (projectId) => {
+    if (projectId === 'all') {
+      return overdueTasks
+    }
+
+     if (projectId === 'allPlanned') {
+      return overdueTasks.filter(task => (task.project.status==='Completed') && task.project.isDeleted != true)
+    }
+
+    if (projectId === 'allCompleted') {
+      return overdueTasks.filter(task => (task.project.status==='Completed') && task.project.isDeleted != true)
+    }
+
+    return overdueTasks.filter(task => task.project._id === projectId && task.project.isDeleted != true)
+  }
+
+const getUpcomingTasks = (projectId) => {
+  if (projectId === 'all') {
+      return upcomingTasks
+    }
+
+     if (projectId === 'allPlanned') {
+      return upcomingTasks.filter(task => (task.project.status==='Completed'))
+    }
+
+    if (projectId === 'allCompleted') {
+      return upcomingTasks.filter(task => (task.project.status==='Completed'))
+    }
+
+    return upcomingTasks.filter(task => task.project._id === projectId)
+}
+
+
+  const getDatasets = (selectedProjects) => {
+    return selectedProjects.reduce((acc, project, index) => {
+      var title = project.title
+
+      var data = []
+
+      for (var month in allTasksPerProject) {
+        data.push(allTasksPerProject[month][title] || 0)
+      }
+
+      acc.push({
+        label: title,
+        data: data,
+        backgroundColor: taskcolors[index],
+      });
+
+      return acc;
+    }, [])
+  }
+
+  const getActiveChartsData = (selectedProjects) => {
+    return selectedProjects.reduce((acc, project, index) => {
+      var completeCount = getCompletedTasks(project._id).length
+      var activeCount = getActiveTasks(project._id).length
+
+      acc[0] += (completeCount + activeCount)
+      acc[1] += activeCount
+      acc[2] += completeCount
+
+      return acc;
+    }, [0, 0, 0])
+  }
+
+  const getOverdueChartsData = (selectedProjects) => {
+    return selectedProjects.reduce((acc, project, index) => {
+      var overdueCount = getOverdueTasks(project._id).length
+      var completeCount = getCompletedTasks(project._id).length
+      var activeCount = getActiveTasks(project._id).length
+
+      acc[0] += (completeCount + activeCount+ overdueCount)
+      acc[1] += overdueCount
+      acc[2] += activeCount
+      acc[3] += completeCount
+
+      return acc;
+    }, [0, 0, 0, 0])
+  }
+
+  const getUpcomingChartsData = (selectedProjects) => {
+    return selectedProjects.reduce((acc, project, index) => {
+      var upcomingCount = getUpcomingTasks(project._id).length
+      var completeCount = getCompletedTasks(project._id).length
+      var activeCount = getActiveTasks(project._id).length
+
+      acc[0] += (completeCount + activeCount+ upcomingCount)
+      acc[1] += upcomingCount
+      acc[2] += activeCount
+      acc[3] += completeCount
+
+      return acc;
+    }, [0, 0, 0, 0])
+  }
+
+  const getPlannedChartsData = (selectedProjects) => {
+    return selectedProjects.reduce((acc, project, index) => {
+      var plannedCount = getPlannedTasks(project._id).length
+      var backlogCount = getBacklogTasks(project._id).length
+
+      acc[0] += (plannedCount + backlogCount)
+      acc[1] += plannedCount
+      acc[2] += backlogCount
+
+      return acc;
+    }, [0, 0, 0])
+  }
+
+  $(document).on('change', '#project-selector', function() {
+    const selectedProject = projects.filter(project => project._id === $(this).val())
+    var projectName = null;
+    if(selectedProject.length>0){
+      projectName = selectedProject[0]['title']
+    }
+    changeProject($(this).val(), projectName)
+  })
+
+  var taskcolors = [
+    "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+  ]
+
+  var datasets = getDatasets(projects)
+
+  var allTasks = new Chart(chartallTasks, {
+    type: 'bar',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      datasets: datasets
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            autoSkip: true,
+            maxTicksLimit: 15,
+            maxRotation: 0,
+            minRotation: 0,
+            fontSize: 11,
+            fontColor: 'rgba(52, 64, 80, 0.7)'
+          }
+        }]
+      }
+    }
+  });
+
+  var activeTasksChart = new Chart(chartTasksAC, {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Total Tasks", "Active Tasks", "Completed Tasks"],
+      datasets: [{
+        label: "Number of Tasks",
+        data: getActiveChartsData(projects),
+        backgroundColor: [
+          "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+        ]
+      }]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+   var overdueTasksChart = new Chart(overdueTasksAC, {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Total Tasks", "Overdue Tasks", "Active Tasks", "Completed Tasks"],
+      datasets: [{
+        label: "Number of Tasks",
+        data: getOverdueChartsData(projects),
+        backgroundColor: [
+          "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+        ]
+      }]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+  var upcomingTasksChart = new Chart(upcomingTasksAC, {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Total Tasks", "Upcoming Tasks", "Active Tasks", "Completed Tasks"],
+      datasets: [{
+        label: "Number of Tasks",
+        data: getUpcomingChartsData(projects),
+        backgroundColor: [
+          "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+        ]
+      }]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+  var plannedTasksChart = new Chart(plannedTasksChartCanvas, {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Total Tasks", "Planned Tasks", "Backlog Tasks"],
+      datasets: [{
+        label: "Number of Tasks",
+        data: getPlannedChartsData(projects),
+        backgroundColor: [
+          "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+        ]
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+  const changeProject = (projectId, projectName=null) => {
+    console.log("Line 769",projectName);
+    if(projectName!=null){
+      updateBreadCrumb(projectName);
+      updateLeftPanel(projectId);
+    }else{
+      updateBreadCrumb(null);
+      updateLeftPanel(projectId);
+    }
+    var progressStatus = 'progress-bar-success'
+
+    milestoneTable.clear()
+    completedTasksTable.clear()
+    overdueTasksTable.clear()
+    upcomingTasksTable.clear()
+
+    const milestones = getMilestones(projectId).map(folder => [
+      folder.status == 'Active' ? '<i class="fa fa-circle" style="color:green"></i> <a href="/edit/folderdata/?id='+folder._id+'" >'+folder.title+'</a>' : '<i class="fa fa-circle" style="color:#999"> </i><a href="/edit/folderdata/?id='+folder._id+'" >'+folder.title+'</a>',
+      findProject(folder.parentId).title,
+      moment(folder.startDate,'MM/DD/YY').format('MM/DD/YY'),
+      moment(folder.endDate,'MM/DD/YY').format('MM/DD/YY'),
+      folder.status,
+    ])
+
+    const filteredCompletedTasks = getCompletedTasks(projectId).map(task => [
+      '<a href="/tasks/task/?id='+task._id+'">'+task.title+'</a>',
+       task.project.title,
+       '<a href="/edit/folderdata/?id='+findMilestone(task.milestone)._id+'" >'+findMilestone(task.milestone).title+'</a>',
+       task.authorIds && task.authorIds[0] ? `${task.authorIds[0].firstname || ''} ${task.authorIds[0].lastname || ''}` : '',
+       moment(task.dates.start,'MM/DD/YY').format('MM/DD/YY'),
+      moment(task.dates.due,'MM/DD/YY').format('MM/DD/YY'),
+      task.status
+    ])
+
+    const incompleteTasks = getActiveTasks(projectId)
+
+    const plannedForProject = getPlannedTasks(projectId)
+
+    const percentFinished = plannedForProject.length ? (filteredCompletedTasks.length / plannedForProject.length) * 100 : 100
+
+    const progressText = percentFinished === 100 ? 'No tasks left' : `${percentFinished.toFixed(2)}%`
+
+    if (percentFinished < 25) progressStatus = 'progress-bar-danger'
+    else if (percentFinished < 50) progressStatus = 'progress-bar-warning'
+
+    const filteredOverdueTasks = getOverdueTasks(projectId).map(task => [
+      '<a href="/tasks/task/?id='+task._id+'">'+task.title+'</a>',
+      task.project.title,
+      task.authorIds && task.authorIds[0] ? `${task.authorIds[0].firstname || ''} ${task.authorIds[0].lastname || ''}` : '',
+      moment(task.dates.start,'MM/DD/YY').format('MM/DD/YY'),
+      moment(task.dates.due,'MM/DD/YY').format('MM/DD/YY'),
+      (-1*(moment(task.dates.due,'MM/DD/YY')).diff(moment(), 'days'))+" Days",
+      task.status
+    ])
+
+    const filteredUpcomingTasks = getUpcomingTasks(projectId).map(task => [
+      '<a href="/tasks/task/?id='+task._id+'">'+task.title+'</a>',
+      task.project.title,
+      task.authorIds && task.authorIds[0] ? `${task.authorIds[0].firstname || ''} ${task.authorIds[0].lastname || ''}` : '',
+      moment(task.dates.start,'MM/DD/YY').format('MM/DD/YY'),
+      moment(task.dates.due,'MM/DD/YY').format('MM/DD/YY'),
+      ((moment(task.dates.due,'MM/DD/YY')).diff(moment(), 'days'))+" Days",
+      task.status
+    ])
+
+    if (projectId === 'all') {
+      allTasks.data.datasets = getDatasets(projects)
+      activeTasksChart.data.datasets[0].data = getActiveChartsData(projects)
+      plannedTasksChart.data.datasets[0].data = getPlannedChartsData(projects)
+      overdueTasksChart.data.datasets[0].data = getOverdueChartsData(projects)
+      upcomingTasksChart.data.datasets[0].data = getUpcomingChartsData(projects)       
+    }else if (projectId === 'allPlanned') {
+      const selectedProject = projects.filter(project => project.status === 'Upcoming')
+      console.log(selectedProject);
+      allTasks.data.datasets = getDatasets(selectedProject)
+      activeTasksChart.data.datasets[0].data = getActiveChartsData(selectedProject)
+      plannedTasksChart.data.datasets[0].data = getPlannedChartsData(selectedProject)
+      overdueTasksChart.data.datasets[0].data = getOverdueChartsData(selectedProject)
+      upcomingTasksChart.data.datasets[0].data = getUpcomingChartsData(projects)
+    }else if (projectId === 'allCompleted') {
+      const selectedProject = projects.filter(project => project.status === 'Completed')
+      console.log(selectedProject);
+      allTasks.data.datasets = getDatasets(selectedProject)
+      activeTasksChart.data.datasets[0].data = getActiveChartsData(selectedProject)
+      plannedTasksChart.data.datasets[0].data = getPlannedChartsData(selectedProject)
+      overdueTasksChart.data.datasets[0].data = getOverdueChartsData(selectedProject)
+      upcomingTasksChart.data.datasets[0].data = getUpcomingChartsData(projects)
+    } else {
+      const selectedProject = projects.filter(project => project._id === projectId)
+      allTasks.data.datasets = getDatasets(selectedProject)
+      activeTasksChart.data.datasets[0].data = getActiveChartsData(selectedProject)
+      plannedTasksChart.data.datasets[0].data = getPlannedChartsData(selectedProject)
+      overdueTasksChart.data.datasets[0].data = getOverdueChartsData(selectedProject)
+      upcomingTasksChart.data.datasets[0].data = getUpcomingChartsData(projects)
+    }
+
+    $('#ms-progress').css('width', `${percentFinished}%`).removeClass('progress-bar-success progress-bar-alert progress-bar-warning').addClass(progressStatus).html(progressText)
+
+    allTasks.update()
+    activeTasksChart.update()
+    plannedTasksChart.update()
+    overdueTasksChart.update()
+    upcomingTasksChart.update()
+
+    completedTasksTable.rows.add(filteredCompletedTasks)
+    completedTasksTable.draw()
+
+    overdueTasksTable.rows.add(filteredOverdueTasks)
+    overdueTasksTable.draw()
+
+    upcomingTasksTable.rows.add(filteredUpcomingTasks)
+    upcomingTasksTable.draw()
+
+    milestoneTable.rows.add(milestones)
+    milestoneTable.draw()
+  }
+
+  const updateBreadCrumb = (projectName) =>{
+    if(projectName != null){
+      var breadcrumbUpdate =  '<li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item"><a href="/">Project</a></li><li class="breadcrumb-item"><a href="/">'+projectName+'</a></li>';
+      $(".breadcrumb").html(breadcrumbUpdate);
+    }else{
+      var breadcrumbUpdate = '<li class="breadcrumb-item"><a href="/">Home</a></li>';
+      $(".breadcrumb").html(breadcrumbUpdate);
+    }    
+  }
+
+  const updateLeftPanel = (projectId) =>{
+    if((projectId == 'all') || (projectId == null)){
+      $('.widget').each(function(){
+        $(this).show();
+      });
+      //$(".widget_"+projectId).show();
+    }else if(projectId == 'allPlanned'){
+      const selectedProject = projects.filter(project => project.status === 'Upcoming')
+      $('.widget').hide();
+      $.each(selectedProject, function(index, project){
+        console.log("project._id", project._id);
+        $('.widget').each(function(){
+          if($(this).hasClass("widget_"+project._id)){
+            $(this).show();
+          }
+        })
+      });
+    }else if(projectId == 'allCompleted'){
+      const selectedProject = projects.filter(project => project.status === 'Completed')
+      $('.widget').hide();
+      $.each(selectedProject, function(index, project){
+        console.log("project._id", project._id);
+        $('.widget').each(function(){
+          if($(this).hasClass("widget_"+project._id)){
+            $(this).show();
+          }
+        })
+      });
+    }else{
+      $('.widget').each(function(){
+        if($(this).hasClass("widget_"+projectId)){
+          $(this).show();
+        }else{
+          $(this).hide();
+        }
+      })
+    }
+  }
+
+function changeStartDate(projectId, startDate, endDate){
+    var url = "http://elyvt.com/projects/api/edit/project";
+    startDate =  moment(startDate, 'MM/DD/YY').format('MM/DD/YY');
+    endDate =  moment(endDate, 'MM/DD/YY').format('MM/DD/YY');
+    data = "startDate="+startDate+"&endDate="+endDate+"&id="+projectId;
+    $.ajax({
+      url: url,
+      data: data,
+      method: 'POST',
+      success: function(result){
+        //alert("success")
+        window.location.reload();
+      }
+    });
+}
+  </script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( ".startDate" ).datepicker({dateFormat:'mm/dd/y'});
+    $( ".endDate" ).datepicker({dateFormat:'mm/dd/y'});
+  } );
+  </script>
+  
+</body>
+</html>

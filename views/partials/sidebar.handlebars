@@ -1,0 +1,56 @@
+
+        <div class="left_col_db sd_t">
+          <div class="left_col scroll-view">
+         <div class="navbar nav_title" style="border: 0;">
+              <a href="/" class="site_title">
+                <img src="/build/images/logo_elevate_main.png" style="float: left;width: 255px;padding-top:4px"/>
+              </a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix" onclick="window.location.href='/profile'" style="cursor:pointer">
+              <div class="profile_pic">
+                {{{trimString userDetails.firstname }}}{{{trimString userDetails.lastname }}}
+              </div>
+              <div class="profile_info">
+                <span>Welcome </span>
+                <h2>{{{ userDetails.firstname }}} {{{ userDetails.lastname }}}</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu ">
+              <div class="menu_section">
+                <ul class="nav side-menu " >
+                  <li class="{{#if homeTab}} active{{/if}}"><a href="/"><i class="fa fa-home" style="padding-right: 10px;"></i>Home</a></li>
+                  <li >
+                    <a class="toggle-mainfolder"><i class="fa fa-sitemap"></i>Folders</a>
+                    {{{ foldermenu }}}
+                  </li>
+                  <li  class="{{#if projectTab}} active{{/if}}"><a href="/projects/projects" ><i class="fa fa-briefcase"></i>Projects</a></li>
+                  <li class="{{#if taskTab}} active{{/if}}"><a href="/tasks/list" ><i class="fa fa-tasks"></i>Tasks</a></li>
+                  <li class="{{#if calendarTab}} active{{/if}}"><a href="/calendar" ><i class="fa fa-tasks" style="padding-right:10px"></i>Calendar</a></li>
+                  <li class="{{#if calendarTab}} active{{/if}}"><a href="/documents" ><i class="fa fa-tasks" style="padding-right:10px"></i>Documents</a></li>
+                  <li class="{{#if ganttTab}} active{{/if}}"><a href="/charts/gantt" ><i class="fa fa-line-chart" style="padding-right:10px"></i>Gantt</a></li>
+                  <li class="{{#if graphTab}} active{{/if}}"><a href="/charts/charts" ><i class="fa fa-bar-chart" style="padding-right:10px"></i>Graphs</a></li>
+                  <li class="{{#if logsTab}} active{{/if}}"><a href="/logs" ><i class="fa fa-tasks" style="padding-right:10px"></i>Logs</a></li>
+                  <li class="{{#if archiveTab}} active{{/if}}"><a class="toggle-mainfolder"><i class="fa fa-trash " style="padding-right:10px"></i>Archive</a>
+                    <ul class="nav child_menu">
+                      <li class="sub_menu "><a href="/tasks/taskarchive"><i class="fa fa-trash" style="padding-right:10px"></i> Tasks</a></li>
+                       <li class="sub_menu "><a href="/projects/archive"><i class="fa fa-trash" style="padding-right:10px"></i> Projects</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+             
+
+            </div>
+            <!-- /sidebar menu -->
+
+          </div>
+         </div>

@@ -1,0 +1,7 @@
+node_modules/
+sendgrid.env
+.env
+driveIntegration.js
+sendgrid.env
+sendgrid.env.local
+/data/*

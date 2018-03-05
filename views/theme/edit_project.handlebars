@@ -1,0 +1,555 @@
+<body class="nav-md">
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+  <style>
+  .hiddenView{
+    display: none;
+  }
+  </style>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+         <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active"><a href ="/projects">Projects</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href ="/edit/project?id={{{projectData._id}}}">{{projectData.title}}</a></li>                    
+                </ol>
+            </nav>
+       
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Edit Project</h3>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="row">
+                    <div class="col-md-12 col-xs-12  widget_tally_box col-lg-12">
+                          <form class="form form-horizontal" method="POST" onsubmit="return validatedate()" name ="projectcreat">
+                            <div class="form-group row col-md-12   ">
+                              <label for="project_name" class="pull-left col-form-label col-md-2 text-right">Project Name</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <input type="text" class="form-control" name="project_name" id="project_name" placeholder="Project Name..." value="{{projectData.title}}">
+                              </div>
+                            </div>
+
+                             <div class="col-md-12">
+                              <h2 class="well well-sm "><div class="col-md-offset-4">Components</div></h2>
+                            </div>
+                            <div class="col-md-9 col-md-offset-3">
+                              <div class="col-md-12">
+                                <div class="clearfix"></div>
+                                <div class="padding-left"><label> -<input type="checkbox" name="Communication" {{#if projectData.project.Comm}} checked="true" {{/if}} id="Communication" onchange="checkComms()"> Communication</label></div>
+                                
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Conceirge" {{#if projectData.project.Concierge}} checked="true" {{/if}} id="Concierge" onchange="checkConcierge()"> Concierge</label></div>
+                                
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Events" {{#if projectData.project.Event}} checked="true" {{/if}} id = "Events" onchange="checkEvents()"> Events</label></div>
+                                
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Facility_Booking" {{#if projectData.project.Facilities}} checked="true" {{/if}} id="Facility" onchange="checkfacility()"> Facility Booking</label></div>
+                                
+                                <div class="padding-left"><label> -<input type="checkbox" name="f_B" {{#if projectData.project.F_B}} checked="true" {{/if}} id="F_B" onchange="checkF_B()"> Food and Beverage</label></div>
+                               
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Security" checked="true" {{#if projectData.project.Security}}  {{/if}} id="Security" onchange="checkSecurity()"> Security</label></div>
+                                <div class="padding-left"><label> -<input type="checkbox"  name="Security_integer"  {{#if projectData.project.Security_integer}} checked="true"  {{/if}} id="Security_integer" onchange="checkSecurityinteger()"> Security Integrator Manager</label></div>
+                                <div class="padding-left"><label> -<input type="checkbox" name="UI_Config" {{#if projectData.project.UI_Custom}} checked="true" {{/if}} id="UI_CONFIG" onchange="checkUI_CONFIG()"> UI Config</label></div>
+                              </div>                              
+                            </div>
+                            
+
+                            <div class="form-group col-md-12 col-xs-12">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Project Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="projectManager" class="form-control" onChange="projectMangerChange(this.value)">
+                                  {{{contactsDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                            </div>
+                          <div class="form-group col-md-12 ">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Building Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="BuildingManager" class="form-control" onChange="BuildingManagerChange(this.value)">
+                                  {{{managerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12" > Client Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="clientManager" class="form-control" onChange="clientManagerChange(this.value)">
+                                  {{{clientmanagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                             </div>
+                             <div class="form-group row col-md-12 col-xs-12 hiddenView" id="UI_CONFIGManagerView" {{#if projectData.project.UI_Custom}} style="display:block" {{/if}}>
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> UI Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="UIManager" class="form-control" onChange="UIManagerChange(this.value)"> 
+                                  {{{UImanagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                               <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                              </div>
+                              <div class="form-group row col-md-12 col-xs-12 hiddenView" id="SecurityManagerView" {{#if projectData.project.Security}} style="display:block" {{/if}}>
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Security Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="securityManager" class="form-control" onChange="securityManagerChange(this.value)">
+                                  {{{securityManagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                              </div>
+                              <div class="form-group row col-md-12 col-xs-12 hiddenView" id="SecurityInterManagerView" {{#if projectData.project.Security}} style="display:block" {{/if}}>
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Security Integrator Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="securityintegratorManager" class="form-control" onChange="securityintegratorManagerChange(this.value)">
+                                  {{{securityintegratorManagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                              </div>
+                              <div class="form-group row col-md-12 col-xs-12hiddenView" id="ConciergeManagerView" {{#if projectData.project.Concierge}} style="display:block" {{/if}}>
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Concierage Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="conciegeManager" class="form-control" onChange="conciegeManagerChange(this.value)">
+                                  {{{conceirageManagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                              </div>
+                              <div class="form-group row col-md-12 col-xs-12 hiddenView" id="commsManagerView" {{#if projectData.project.Comm}} style="display:block" {{/if}}>
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Communication Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="communicationManager" class="form-control" onChange="communicationManagerChange(this.value)">
+                                  {{{communicationManagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                              </div>
+                              <div class="form-group row col-md-12 col-xs-12 hiddenView" id="EventsManagerView" {{#if projectData.project.Event}} style="display:block" {{/if}}>
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Events Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="eventsManager" class="form-control" onChange="eventsManagerChange(this.value)">
+                                  {{{eventsManagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                              </div>
+                              <div class="form-group row col-md-12 col-xs-12 hiddenView" id="FacilityManagerView" {{#if projectData.project.Facilities}} style="display:block" {{/if}}>
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Facility Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="facilityManager" class="form-control" onChange="facilityManagerChange(this.value)">
+                                  {{{facilityManagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                              </div>
+                              <div class="form-group row col-md-12 col-xs-12 hiddenView" id="F_BManagerView" {{#if projectData.project.F_B}} style="display:block" {{/if}}>
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Food And Bevarage Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="fandbManager" class="form-control" onChange="fandbManagerChange(this.value)">
+                                  {{{foodandbeverageManagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                              </div>
+                              <div class="form-group row col-md-12 ">
+                              <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12"> Client Launch Manager</label>
+                              <div class="col-sm-6 cal-xs-12">
+                                <select name="clientlaunchManager" class="form-control" onChange="clientlaunchManagerChange(this.value)">
+                                  {{{clientlaunchermanagerDropdownHTML}}}
+                                </select>           
+                              </div>
+                              <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hiddenView="true"></i>
+                            </div>
+
+                             
+                            
+                            <div class="clearfix" style="padding:5px;"></div>
+                             <div class="form-group col-md-12  col-xs-12">
+                                <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Start Date</label>
+                                <div class="col-sm-6 cal-xs-12">
+                                  <input type="text" class="form-control" name="startDate" id="startDate" value="{{{ projectData.project.startDate }}}" class="form-control">
+                                </div>
+                              </div>
+
+                              <div class="form-group col-md-12 col-xs-12">
+                                <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Due Date</label>
+                                <div class="col-sm-6 cal-xs-12">
+                                  <input type="text" class="form-control" name="endDate" id="endDate"  value="{{{ projectData.project.endDate }}}" class="form-control">
+                                </div>
+                              </div>
+
+                              <div class="form-group col-md-12 col-xs-12">
+                                <label for="task_name" class="pull-left col-form-label col-md-2 col-xs-12">Status</label>
+                                <div class="col-sm-6 cal-xs-12">
+                                  <select id="status" name="status" class="form-control">
+                                    {{{projectStatusOptions}}}
+                                </select>           
+                                </div>
+                              </div>
+
+
+
+                              
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 text-center">
+                              <button class="btn btn-primary">Update</button>
+                            </div>
+                          </form>
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="clearfix"></div>
+                      <div id="placeholder"></div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+
+          <!-- footer content -->
+          
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+</div>
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+  
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  function validatedate(){
+    var startDate = $("#startDate").val();
+    var endDate = $("#endDate").val();
+      if(startDate!='')
+    if(Date.parse(startDate) > Date.parse(endDate)){
+   alert("Invalid Date Range");
+     return false;
+       }
+         else {
+        return true;
+     }
+} 
+
+  </script>
+   <script>
+  $( function() {
+    $( "#startDate" ).datepicker({dateFormat:'mm/dd/y'});
+    $( "#endDate" ).datepicker({dateFormat:'mm/dd/y'});
+  } );
+
+   </script>
+
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+       <div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content" align="center">
+       <div class="login_wrapper" align="center">
+         <h2 class="page-header">Add New User</h2>
+           {{#if errors}}
+             {{#each errors}}
+              <div class="alert alert-danger">{{msg}}</div>
+            {{/each}}
+           {{/if}}
+        <form method="post" action="/users/userregister" align ="center">
+          <div class="form-group row col-md-12" align="center">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" align="right">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" align="center">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="title" align="center">
+          </div>
+          
+           
+            <div class="form-group row col-md-12">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email">
+          </div>
+          <div class="form-group row col-md-12">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password" align="center">
+          </div>
+                            
+          <div class="form-group row col-md-12">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password2" align="center" />
+            <input type="hidden" placeholder="" name="projectID" align="center" value ="{{{projectData._id}}}">
+            <input type="hidden"  placeholder="" name="projectManager" align="center" value="" id ="projectMangerhiddenView">
+            <input type="hidden" placeholder="" name="ClientManager" align="center" value ="" id ="ClientManagerhiddenView">
+            <input type="hidden"  placeholder="" name="BuildingManager" align="center" value ="" id ="BuildingManagerhiddenView">
+            <input type="hidden"  placeholder="" name="UIManager" align="center" value ="" id ="UIManagerhiddenView">
+            <input type="hidden"  placeholder="" name="SecurityManager" align="center" value =""
+            id ="SecurityManagerhiddenView">
+            <input type="hidden"  placeholder="" name="SecurituintegrityManager" align="center" value ="" id ="SecurituintegrityManagerhiddenView">
+            
+            <input type="hidden"  placeholder="" name="ConceirageManager" align="center" value ="" id ="ConceirageManagerhiddenView">
+            <input type="hidden"  placeholder="" name="CommunticationManager" align="center" value ="" id ="CommunticationManagerhiddenView">
+            <input type="hidden"  placeholder="" name="EventsManager" align="center" value ="" id ="EventsManagerhiddenView">
+            <input type="hidden"  placeholder="" name="FacilityManager" align="center" value ="" id ="FacilityManagerhiddenView">
+            <input type="hidden"  placeholder="" name="FoodvebrageManager" align="center" value ="" id ="FoodvebrageManagerhiddenView"> 
+            <input type="hidden"  placeholder="" name="clientlauncherManager" align="center" value ="" id ="clientlauncherManagerhiddenView">
+
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="button" class="btn btn-right" data-dismiss="modal">Close</button>
+        </form>
+       
+          
+        
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+
+<script>
+ $(function() {
+  $("form[name='projectcreat']").validate({
+    
+    rules: {
+      
+      project_name: "required",
+      startDate: "required",
+      endDate: "required",
+    },
+    
+    messages: {
+      title: "Please Enter your Project Name",
+      startDate: "Please Enter your Start Date",
+     endDate: "Please Enter your End Date",
+    },
+    
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+  function activateMyModal(){
+  $("#myModal").modal();
+}
+   function projectMangerChange(value){
+     if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#projectMangerhiddenView").val(value);
+      }
+  }
+      
+function BuildingManagerChange(value){
+  if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#BuildingManagerhiddenView").val(value);
+      }
+      //console.log("laine no",value);
+   }
+
+   function clientManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#ClientManagerhiddenView").val(value);
+    }
+      //console.log("line no",value);
+
+   }
+   function UIManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#UIManagerhiddenView").val(value);
+    }
+   }
+   function securityManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#SecurityManagerhiddenView").val(value);
+    }
+   }
+
+   function securityintegratorManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#SecurituintegrityManagerhiddenView").val(value);
+    }
+   }
+   function conciegeManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#ConceirageManagerhiddenView").val(value);
+    }
+   }
+   function communicationManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#communticationmanagerhiddenView").val(value);
+    }
+   }
+   function eventsManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#EventsManagerhiddenView").val(value);
+    }
+   }
+   function facilityManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#FacilityManagerhiddenView").val(value);
+    }
+   }
+   function fandbManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#FoodvebrageManagerhiddenView").val(value);
+    }
+   }
+   function clientlaunchManagerChange(value){
+    if(value=="null"){
+     activateMyModal();
+    }else{
+      $("#clientlauncherManagerhiddenView").val(value);
+    }
+   }
+
+   function checkComms(){
+    if($("#Communication").is(":checked")){
+      $("#commsManagerView").show();
+    }else{
+      $("#commsManagerView").hide();
+    }
+   }
+
+   function checkConcierge(){
+    if($("#Concierge").is(":checked")){
+      $("#ConciergeManagerView").show();
+    }else{
+      $("#ConciergeManagerView").hide();
+    }
+   }
+
+   function checkEvents(){
+    if($("#Events").is(":checked")){
+      $("#EventsManagerView").show();
+    }else{
+      $("#EventsManagerView").hide();
+    }
+   }
+
+  function checkfacility(){
+    if($("#Facility").is(":checked")){
+      $("#FacilityManagerView").show();
+    }else{
+      $("#FacilityManagerView").hide();
+    }
+   }
+   
+   function checkF_B(){
+    if($("#F_B").is(":checked")){
+      $("#F_BManagerView").show();
+    }else{
+      $("#F_BManagerView").hide();
+    }
+   }
+
+   function checkF_B(){
+    if($("#F_B").is(":checked")){
+      $("#F_BManagerView").show();
+    }else{
+      $("#F_BManagerView").hide();
+    }
+   }
+
+   function checkSecurity(){
+    if($("#Security").is(":checked")){
+      $("#SecurityManagerView").show();
+    }else{
+      $("#SecurityManagerView").hide();
+    }
+   }
+function checkSecurityinteger(){
+    if($("#Security_integer").is(":checked")){
+      $("#SecurityInterManagerView").show();
+    }else{
+      $("#SecurityInterManagerView").hide();
+    }
+   }
+
+   function checkUI_CONFIG(){
+    if($("#UI_CONFIG").is(":checked")){
+      $("#UI_CONFIGManagerView").show();
+    }else{
+      $("#UI_CONFIGManagerView").hide();
+    }
+   }
+
+</script>
+</body>
+</html>

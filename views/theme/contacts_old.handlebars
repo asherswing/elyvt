@@ -1,0 +1,96 @@
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container_db">
+        {{> sidebar }}
+        
+
+        <div class="right_col_db" role="main">
+          <!-- top navigation !3-->
+          {{> topbar }}
+          <!-- /top navigation -->
+
+          <!-- page content -->
+          <div class="main_cont" role="main">
+            <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contacts</li>
+                </ol>
+            </nav>
+
+
+           <div class="row">
+
+
+            
+            
+            <div class="col-md-12">
+              <h2>Contacts</h2>
+              <div class="clearfix"></div>
+              <div class="row">
+                <div class="x_panel">
+                  <div id="contactsHTMLDIV" class="col-md-12 row">
+                    {{{contactsHTML}}}
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+
+  <script src="/vendors/plotly/js/plotly-latest.min.js"></script>
+  <script src="/vendors/plotly/js/numeric.min.js"></script>
+  
+
+
+  
+  <script>
+
+
+  /**
+  Contacts
+  **/
+
+
+  var contactsData = ''
+
+  
+
+  //console.log(contactsHTML)
+  //document.getElementById('contactsHTMLDIV').innerHTML += contactsHTML
+
+  </script>
+
+  
+</body>
+</html>

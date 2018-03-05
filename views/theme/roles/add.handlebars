@@ -1,0 +1,164 @@
+<body class="nav-md">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+         <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Roles</li>
+                </ol>
+            </nav>
+       
+
+
+        <section class="login_content">
+
+              <form method="POST" action ="/role/add">
+              			<legend>Roles</legend>
+              			<div class="col-md-6 col-md-offset-3 col-xs-12">
+                      <label for="text">Roles Title</label>
+                      <input class="form-control" type="text" name="rolestitle" value="" autofocus="autofocus"/>
+                    </div>
+               <div class="clearfix"></div>
+                      
+               <div class="clearfix"></div>
+              			<button class="btn btn-success" type="submit">Add Roles</button>
+              		</form>
+
+    <div>
+                     
+                              </div>
+
+              </section>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+
+            </div>
+          </div>
+
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+
+  <script src="/vendors/plotly/js/plotly-latest.min.js"></script>
+  <script src="/vendors/plotly/js/numeric.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+  <script type="text/javascript" src="js/snap.svg-min.js"></script>
+  <script src="/js/frappe-gantt.min.js" ></script>
+
+  <script>
+  // initalise variables
+
+  
+
+/*
+  var tasksGanttChartContents = []
+
+  var tasksgantdata = {{{tasksGanttChartContents}}}
+
+  for (var element in tasksgantdata){
+    var task = {
+       id: tasksgantdata[element]['id'],
+      name: tasksgantdata[element]['name'],
+      start: tasksgantdata[element]['start'],
+      end: tasksgantdata[element]['end'],
+      progress: 100
+    } 
+    if(tasksgantdata[element]['dependencies']){
+      task.dependencies = tasksgantdata[element]['dependencies']
+    }
+    tasksGanttChartContents.push(task);
+  }
+
+
+  
+   * Function getContactByID
+   *
+   * Find and Return Contact from contactList by ID
+   *
+   * @param (type): $contactID(integer)
+   * @return Contact Details: (Json Obj)
+   
+   function getContactByID($contactID){
+    for(var contactsElement in contactsData['data']){
+      if($contactID==contactsData['data'][contactsElement]['id']){
+        return contactsData['data'][contactsElement];
+      }
+    }
+    return false;
+  }
+
+
+var gantt = new Gantt("#gantt", tasksGanttChartContents);
+gantt.change_view_mode('Week')
+
+*/
+
+  $(window).load(function(){
+    $('#completedTaskstable').DataTable();
+    $("#overdueTaskstable").DataTable();
+    $("#upcomingTaskstable").DataTable();
+  });
+
+  </script>
+
+</body>
+</html>
+

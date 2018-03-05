@@ -1,0 +1,397 @@
+<div dir="Dashboard">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#fbfbfb" style="border-collapse:collapse;background:#526178;background:-webkit-linear-gradient(bottom,#55647b 0%,#414d60 100%);background:-moz-linear-gradient(bottom,#55647b 0%,#414d60 100%);background:-ms-linear-gradient(bottom,#55647b 0%,#414d60 100%);background:-o-linear-gradient(bottom,#55647b 0%,#414d60 100%);background:linear-gradient(bottom,#55647b 0%,#414d60 100%);text-align:center">
+    
+    <tbody><tr>
+      <td width="100%" height="100"><table width="240" align="center" border="0" cellpadding="40" cellspacing="0">
+          <tbody><tr>
+            <td width="240" style="color:#fff;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:30px;text-transform:uppercase;line-height:38px;letter-spacing:1px;text-align:center;font-weight:400"><img src="{{{site_url}}}build/images/logo_elevate_main.png" alt="Elevate" width="240" height="85" class="CToWUd"></td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+    
+    
+    <tr>
+     {{!--  <td><table width="500" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+            <td style="color:#fff;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:30px;text-transform:uppercase;line-height:38px;letter-spacing:1px;text-align:center;font-weight:400">Elevate <span style="font-weight:700">Weekly Critical Path Dashboard</span></td>
+          </tr>
+      </tbody></table></td> --}}
+    </tr>
+
+    <tr>
+      <td width="100%" height="50">&nbsp;</td>
+    </tr>
+
+
+  </tbody></table>
+
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#fbfbfb" style="border-collapse:collapse">
+      
+      <tbody><tr>
+        <td width="100%" height="60">&nbsp;</td>
+      </tr>
+      
+
+      <tr>
+        <td>
+          <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center">
+            
+            <tbody><tr>
+              <td style="color:#414d5f;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase"><h3>Weekly Critical Path Dashboard</h3></td>
+            </tr>
+            
+            
+          </tbody></table>
+        </td>
+      </tr>
+      
+</tbody></table>
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#fbfbfb" style="border-collapse:collapse">
+  <tbody>
+  
+  <tr>
+    <td height="100"><table width="777" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center">
+      <tbody>        
+      <tr>
+        <td style=""><h3 style="float:right;width:50%"><div style="text-align:right"><div style="float:right">{{{project}}}</div><div style="color:green;background-color:green;width:20px;height:20px;border-radius:50%;margin: 3px 5px;float:right"></div> </div></h3>
+          <div style="float:left;width:50%">
+           <div style="float:left">Target launch date: <strong>{{{ launchDate }}}</strong> </div>
+           <br />
+           <div style="float:left">Project Manager: <strong>{{{ projectManager }}}</strong> </div>
+           <br />
+           <div style="float:left">Email: <strong>{{{ projectManagerEmail }}}</strong> </div>
+          <div>
+        </td>
+      </tr>
+    </tbody></table></td>
+  </tr>    
+
+<tr>
+    <td height="100"><table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center">
+      
+      <tbody>
+        
+      <tr>
+        <td style="color:#414d5f;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase"><h3>Milestones </h3></td>
+      </tr>
+    
+
+    </tbody></table></td>
+  </tr>
+    <tr>
+    <td><table width="777" height="auto" border="0" align="center" cellpadding="7" cellspacing="1" bgcolor="#CCCCCC" id="m_-6927562460427878336overdueTaskstable" style="border-width:1px;padding-bottom:50px">
+      <thead>
+        <tr>
+          <th width="50%" height="32" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Milestone</div></th>
+          <th width="20%" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Project</div></th>
+          <th width="10" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Start Date</div></th>
+          <th width="10" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">End Date</div></th>
+          <th width="10" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Status</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{{MilestonesTableContent}}}
+      </tbody>
+    </table></td>
+  </tr>
+
+    
+
+  <tr>
+    <td height="100"><table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center">
+      
+      <tbody><tr>
+        <td style="color:#414d5f;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase"><h3>Risk Report </h3></td>
+      </tr>
+      
+      
+      <tr>
+        <td width="100%" height="20">&nbsp;</td>
+      </tr>
+      
+      
+      <tr>
+        <td><table width="1" height="20" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="height:20px!important;padding:0;border-collapse:collapse">
+            <tbody><tr>
+              <td></td>
+            </tr>
+        </tbody></table></td>
+      </tr>
+
+      <tr>
+        <td><table width="100%" height="1" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="padding:0;border-collapse:collapse">
+            <tbody><tr>
+              <td></td>
+            </tr>
+        </tbody></table></td>
+      </tr>
+
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td height="100"><table width="777" height="auto" border="0" align="center" cellpadding="7" cellspacing="1" bgcolor="#CCCCCC" id="m_-6927562460427878336overdueTaskstable" style="border-width:1px;padding-bottom:50px">
+      <thead>
+        <tr>
+          <th width="582" height="32" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left"> Tasks</div></th>
+          <th width="92" height="32" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left"> Project</div></th>
+          <th width="91" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Assignee</div></th>
+          <th width="90" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Start Date</div></th>
+          <th width="91" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">End Date</div></th>
+          <th width="91" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Days Past Due</div></th>
+          <th width="58" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Status</div></th>
+        </tr>
+      </thead>
+      <tbody>
+       {{{tasks.overdueTasksHTML}}}
+      </tbody>
+    </table></td>
+  </tr>
+
+
+
+  <tr>
+    <td height="100"><table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center">
+      
+      <tbody><tr>
+        <td style="color:#414d5f;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase"><h3>Upcoming Tasks</h3></td>
+      </tr>
+      
+      
+      <tr>
+        <td width="100%" height="20">&nbsp;</td>
+      </tr>
+      
+      
+      <tr>
+        <td><table width="1" height="20" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="height:20px!important;padding:0;border-collapse:collapse">
+            <tbody><tr>
+              <td></td>
+            </tr>
+        </tbody></table></td>
+      </tr>
+
+      <tr>
+        <td><table width="100%" height="1" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="padding:0;border-collapse:collapse">
+            <tbody><tr>
+              <td></td>
+            </tr>
+        </tbody></table></td>
+      </tr>
+
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td height="100"><table width="777" height="auto"  border="0" align="center" cellpadding="7" cellspacing="1" bgcolor="#CCCCCC" id="m_-6927562460427878336overdueTaskstable" style="border-width:1px;padding-bottom:50px">
+      <thead>
+        <tr>
+          <th width="582" height="32" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left"> Tasks</div></th>
+          <th width="92" height="32" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left"> Project</div></th>
+          <th width="91" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Assignee</div></th>
+          <th width="90" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Start Date</div></th>
+          <th width="91" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">End Date</div></th>
+          <th width="58" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Days Left</div></th>
+        </tr>
+      </thead>
+      <tbody>
+       {{{tasks.upcomingTaskHTML}}}
+      </tbody>
+    </table></td>
+  </tr>
+      
+      <tr>
+        <td width="100%" height="100">&nbsp;</td>
+      </tr>
+      
+
+      <tr>
+    <td height="100"><table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center">
+      <table>
+      <tbody>
+        <tr>
+        <td><table width="1" height="20" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="height:20px!important;padding:0;border-collapse:collapse">
+            <tbody><tr>
+              <td></td>
+            </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td style="color:#414d5f;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase"><h3>Completed Tasks </h3></td>
+      </tr>
+    
+
+    </tbody></table></td>
+  </tr>
+
+   <tr>
+        <td><table width="1" height="20" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="height:20px!important;padding:0;border-collapse:collapse">
+            <tbody><tr>
+              <td></td>
+            </tr>
+        </tbody></table></td>
+      </tr>
+
+      <tr>
+        <td><table width="100%" height="1" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="padding:0;border-collapse:collapse">
+            <tbody><tr>
+              <td></td>
+            </tr>
+        </tbody></table></td>
+      </tr>
+
+    
+    <td><table width="777" height="523" border="0" align="center" cellpadding="7" cellspacing="1" bgcolor="#CCCCCC" id="m_-6927562460427878336overdueTaskstable" style="border-width:1px">
+      <thead>
+        <tr>
+          <th width="582" height="32" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Completed Tasks</div></th>
+          <th width="92" height="32" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left"> Project</div></th>
+          <th width="91" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Assignee</div></th>
+          <th width="90" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Start Date</div></th>
+          <th width="91" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">End Date</div></th>
+          <th width="58" height="28" colspan="1" rowspan="1" bgcolor="#FFFFFF" style="font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:16px;text-align:center;font-weight:600"><div align="left">Status</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{{tasks.completedtaskHTML}}}
+      </tbody>
+    </table></td>
+  </tr>
+
+      {{!-- <tr>
+        <td>
+          <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center">
+            
+            
+            <tbody><tr>
+              <td style="color:#414d5f;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase">And all the rest</td>
+            </tr>
+            
+
+            
+            <tr>
+              <td width="100%" height="20">&nbsp;</td>
+            </tr>
+            
+
+            
+            <tr>
+              <td>
+                <table width="1" height="20" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="height:20px!important;padding:0;border-collapse:collapse">
+                  <tbody><tr>
+                    <td></td>
+                  </tr>
+                </tbody></table>              </td>
+            </tr>
+            
+
+            
+            <tr>
+              <td>
+                <table width="100%" height="1" align="center" bgcolor="#e9e9e9" border="0" cellpadding="0" cellspacing="0" style="padding:0;border-collapse:collapse">
+                  <tbody><tr>
+                    <td></td>
+                  </tr>
+                </tbody></table>              </td>
+            </tr>
+
+          </tbody></table>        </td>
+      </tr> --}}
+
+      
+      
+</tbody></table>
+
+  
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f5f5f5" style="border-collapse:collapse">
+    
+    <tbody><tr>
+      <td>
+        
+        {{!-- <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:0px">
+          <tbody><tr>
+            <td width="100%" height="20">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+                <img src="?ui=2&amp;ik=6b26e314ce&amp;view=fimg&amp;th=15fb1b93c823df91&amp;attid=0.1&amp;disp=emb&amp;realattid=ii_15fb1b90035affdf&amp;attbid=ANGjdJ_z28vARaWWKnnuH3L_RI-78pgy_cbOVL3XBxXmFqz7Jl_KT1O97E3Ylcl74KZtGvuJ-2VZfoXgg_so1vKVeUWGJnppqCTETTF1RwRIyAshUzWpTTiZTXtKEt4&amp;sz=w374-h100&amp;ats=1510573384938&amp;rm=15fb1b93c823df91&amp;zw&amp;atsh=1" alt="Встроенное изображение 2" width="187" height="50" class="CToWUd"><table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+                  <tbody><tr>
+                    <td height="50"><img src="https://ci4.googleusercontent.com/proxy/ySHTykoIO_SWrIpfHFl2dRfI6AFlJ3Lo6kZ5T9ZoI-28UFH-MhGVnpYR96GK-Fh4u4zikg=s0-d-e1-ft#http://img/logo_elevate_sm.png" width="187" height="50" alt="" title="" border="0" style="border:0;display:inline_block" class="CToWUd"> </td>
+                  </tr>
+                </tbody></table>
+              
+                
+                <table height="40" align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+                  <tbody><tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                </tbody></table>
+              
+                
+                <table align="right" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+                  <tbody><tr>
+                    <td style="color:#414d5f;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:14px;letter-spacing:0.5px;font-weight:400"><a href="#m_-6927562460427878336_" style="color:#414d60;text-decoration:none">about</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#m_-6927562460427878336_" style="color:#414d60;text-decoration:none">contact</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#m_-6927562460427878336_" style="color:#414d60;text-decoration:none">faq</a> </td>
+                  </tr>
+                </tbody></table> 
+                          </td>
+          </tr>
+          <tr>
+            <td height="20">&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="600" height="1" align="center" bgcolor="#e5e5e5" border="0" cellpadding="0" cellspacing="0" style="height:1px!important;width:600px;background-color:#e5e5e5;padding:0;border-collapse:collapse">
+                <tbody><tr>
+                  <td></td>
+                </tr>
+              </tbody></table>            </td>
+          </tr>
+          
+        </tbody></table> --}}
+        
+
+        
+        <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+          <tbody><tr>
+            <td width="100%" height="20"></td>
+          </tr>
+          
+
+          
+          <tr>
+            <td>
+              
+              <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+                <tbody><tr>
+                  <td style="color:#414d5f;font-family:'Raleway',Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.5px;font-weight:400">
+                  © 2017 <a href="{{{site_url}}}" style="color:#414d5f;font-weight:600;text-decoration:none" target="_blank" data-saferedirecturl="{{{site_url}}}">elyvt.com</a>. All Rights Reserved                  </td>
+                </tr>
+              </tbody></table>
+              
+
+              
+              <table height="40" align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+                <tbody><tr>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody></table>
+
+            </td>
+          </tr>
+          
+
+          
+          <tr>
+            <td width="100%" height="10">&nbsp;</td>
+          </tr>
+          
+        </tbody></table>
+        
+      </td>
+    </tr>
+</tbody></table><div class="yj6qo ajU"><div id=":29p" class="ajR" role="button" tabindex="0" data-tooltip="Show trimmed content" aria-label="Show trimmed content"><img class="ajT" src="//ssl.gstatic.com/ui/v1/icons/mail/images/cleardot.gif"></div></div><div class="adL">
+  </div></div>

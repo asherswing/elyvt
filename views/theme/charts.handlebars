@@ -1,0 +1,549 @@
+<style>
+#myDiv {
+  width: 50%;
+  height: 300px;
+  float: left;
+  margin-top: 5%;
+}
+</style>
+<body class="nav-md">
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+         <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href ="/charts">Graph</a></li>
+                </ol>
+            </nav>
+       
+
+        <section class="login_content">
+
+                <div id="myDiv">
+                  Number Of Projects
+                  <canvas id="numberProjects"></canvas>
+                </div>
+                <div id="myDiv">
+                  Remaining Tasks
+                  <canvas id="remainingTasks"></canvas>
+                </div>
+                <div id="myDiv">
+                  Upcoming Tasks (2018)
+                  <canvas id="upcomingTasks"></canvas>
+                </div>
+                <div id="myDiv">
+                  Number Of Tasks (Active or Completed)
+                  <canvas id="tasksAC"></canvas>
+                </div>
+                <div id="myDiv">
+                  Number Of Tasks (Planned or Backlog)
+                  <canvas id="tasksPB"></canvas>
+                </div>
+                <div id="myDiv">
+                  Progress Of Tasks (%)
+                  <canvas id="progressTasks"></canvas>
+                </div>
+                <div id="myDiv">
+                  Tasks Assigned
+                  <canvas id="tasksAssigne"></canvas>
+                </div>
+                <div id="myDiv">
+                  Tasks Assigned (%)
+                  <canvas id="taskAssigne2"></canvas>
+                </div>
+                <div id="myDiv">
+                  User Roles
+                  <canvas id="userRoles"></canvas>
+                </div>
+
+              </section>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+
+            </div>
+          </div>
+
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+
+  <script src="/vendors/plotly/js/plotly-latest.min.js"></script>
+  <script src="/vendors/plotly/js/numeric.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+  <script type="text/javascript" src="js/snap.svg-min.js"></script>
+  <script src="/js/frappe-gantt.min.js" ></script>
+
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+  <script>
+      var tasks = {{{tasks}}}
+      var users = {{{users}}}
+      var projects = {{{projects}}}
+      var folders = {{{folders}}}
+      var roles = {{{roles}}}
+
+      function findProject(folderId) {
+        const folder = folders.find(folder => folderId === folder._id)
+
+        if (folder.isProject) return folder
+
+        else return findProject(folder.parentId)
+      }
+
+      var upcomingtasks = tasks.reduce((acc, task) => {
+        if (task.dates.type !== 'backlog') {
+          acc[task.project.title] = 
+            acc[task.project.title] ?
+              acc[task.project.title] + 1 : 1
+        }
+
+        return acc;
+      }, {})
+
+      var taskTypes = tasks.reduce((acc, task) => {
+        acc[task.dates.type] = acc[task.dates.type] ? acc[task.dates.type] + 1 : 1
+
+        return acc;
+      }, {})
+
+      var taskStatus = tasks.reduce((acc, task) => {
+        acc[task.status] = acc[task.status] ? acc[task.status] + 1 : 1
+
+        return acc;
+      }, {})
+
+      var taskPerProject = projects.reduce((projects, project) => {
+        var count = tasks.reduce((acc, task) => acc + (task.project._id === project._id ? 1 : 0), 0)
+
+        projects[project.title] = count
+
+        return projects;
+      }, {})
+
+      var assignees = tasks.reduce((acc, task) => {
+        if (task.user && task.user[0]) {
+          var assignee = users.find(user => user._id === task.user[0])
+          assignee = `${assignee.firstname} ${assignee.lastname}`
+
+          acc[assignee] = acc[assignee] ? acc[assignee] + 1 : 1
+        } else {
+          acc.unassigned += 1
+        }
+
+        return acc
+      }, { unassigned: 0 })
+
+      var upcomingTasksPerProject = tasks.reduce((acc, task) => {
+        for (var i = 0; i < 12; i++) {
+          var month = moment().month(i)
+          var monthName = month.format('MMMM')
+
+          if (!acc[monthName]) acc[monthName] = {}
+
+          if (task.dates.type === 'Planned') {
+            console.log(moment(task.dates.end).format())
+            if (moment(task.dates.end).isSame(month, 'month')) {
+              var project = task.project.title
+
+              acc[monthName][project] = acc[monthName][project] ? acc[monthName][project] + 1 : 1
+            }
+          }
+        }
+        return acc
+      }, {})
+
+      $(function(){
+        function randomRGBA() {
+          var o = Math.round, r = Math.random, s = 255;
+          return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+        }
+        function getData(array, search, value) {
+          var data = array.find(function(element) {
+            return element[search] == value;
+          });
+          return data;
+        }
+        var activeTasks = 0;
+        var completedTasks = 0;
+        var plannedTasks = 0;
+        var backlogTasks = 0;
+        var totalTasks = 0;
+        var user = {
+          hasRoles: [],
+          hasNoRoles: 0
+        };
+        var totalUsers = 0;
+        var people = {
+          assigned: [],
+          unassigned: 0
+        };
+        
+        var chartProgressTasks = document.getElementById("progressTasks").getContext("2d");
+        var chartTasksAC = document.getElementById("tasksAC").getContext("2d");
+        var chartTasksAssigne = document.getElementById("tasksAssigne").getContext("2d");
+        var chartTasksAssigne2 = document.getElementById("taskAssigne2").getContext("2d");
+        var chartTasksPB = document.getElementById("tasksPB").getContext("2d");
+        var chartUserRoles = document.getElementById("userRoles").getContext("2d");
+        var chartNumberProjects = document.getElementById("numberProjects").getContext("2d");
+        var chartRemainingTasks = document.getElementById("remainingTasks").getContext("2d");
+        var chartUpcomingTasks = document.getElementById("upcomingTasks").getContext("2d");
+
+        var labels = ["Total Users", "Has No Roles"];
+        var data = [0, roles.NoRoles];
+
+        for (var role in roles) {
+          if (role !== 'NoRoles') {
+            labels.push(role);
+            data.push(roles[role]);
+          }
+          data[0] += roles[role]
+        }
+
+        var userRoles = new Chart(chartUserRoles, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: "Users",
+              data: data,
+              backgroundColor: [
+                "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+              ],
+            }]
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+
+        $.getJSON("data/json/tasks.json", function(result){
+          var numberProjects = new Chart(chartNumberProjects, {
+            type: 'horizontalBar',
+            data: {
+              labels: ["Number of Projects"],
+              datasets: [{
+                label: "Projects",
+                data: [projects.length],
+                backgroundColor: [
+                  "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+                ],
+              }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          var datasets = [];
+
+          var taskcolors = [
+            "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+          ]
+
+          projects.forEach((project, index) => {
+            var title = project.title
+
+            var data = []
+
+            for (var month in upcomingTasksPerProject) {
+              data.push(upcomingTasksPerProject[month][title] || 0)
+            }
+
+            datasets.push({
+              label: title,
+              data: data,
+              backgroundColor: taskcolors[index],
+            });
+          })
+
+          var upcomingTasks = new Chart(chartUpcomingTasks, {
+            type: 'bar',
+            data: {
+              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+              datasets: datasets
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          var labels = [];
+          var data = [];
+
+          for(var project in taskPerProject) {
+            labels.push(project);
+            data.push(taskPerProject[project]);
+          }
+
+          var remainingTasks = new Chart(chartRemainingTasks, {
+            type: 'horizontalBar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: "Tasks",
+                data: data,
+                backgroundColor: [
+                  "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+                ],
+              }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          var labels = ["Total Tasks", "Unassigned"];
+          var data = [assignees.unassigned, assignees.unassigned];
+
+          for (var assignee in assignees) {
+            if (assignee !== 'unassigned') {
+              labels.push(assignee)
+              data.push(assignees[assignee])
+              data[0] += assignees[assignee]
+            } 
+          }
+
+          var tasksAssigne = new Chart(chartTasksAssigne, {
+            type: 'horizontalBar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: "Tasks",
+                data: data,
+                backgroundColor: [
+                  "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+                ],
+              }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          var total = +data[0]
+          var unassigned = ((+data[1]/+data[0]) * 100).toFixed(2);
+
+          labels = ["Unassigned"];
+          data = [unassigned];
+          var colors2 = ["rgba(255,0,0,0.5)"];
+
+          for(assignee in assignees) {
+            if (assignee !== 'unassigned') {
+              var count = ((+assignees[assignee]/total) * 100).toFixed(2);
+              labels.push(assignee);
+              data.push(count);
+            }
+          }
+
+          var taskAssigne2 = new Chart(chartTasksAssigne2, {
+            type: 'pie',
+            data: {
+              labels: labels,
+              datasets: [{
+                data: data,
+                backgroundColor: [
+                  "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+                ],
+              }]
+            },
+            options: {
+              maintainAspectRatio: false
+            }
+          });
+
+          var data = [0, 0, 0]
+
+          for (type in taskTypes) {
+            data[0] += taskTypes[type]
+            if (type === 'backlog') data[1] = taskTypes[type]
+            else data[2] = taskTypes[type]
+          }
+
+          labels = ["Total Tasks", "Planned Tasks", "Backlog Tasks"];
+
+          var tasksPB = new Chart(chartTasksPB, {
+            type: 'horizontalBar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: "Number of Tasks",
+                data: data,
+                backgroundColor: [
+                  "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+                ]
+              }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          labels = ["Total Tasks", "Active Tasks", "Completed Tasks"];
+          data = [0, 0, 0];
+
+          for (type in taskStatus) {
+            data[0] += taskStatus[type]
+            if (type === 'Active') data[1] = taskStatus[type]
+            else data[2] = taskStatus[type]
+          }
+
+          var tasksAC = new Chart(chartTasksAC, {
+            type: 'horizontalBar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: "Number of Tasks",
+                data: data,
+                backgroundColor: [
+                  "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+                ]
+              }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          activeTasks = ((data[1]/data[0]) * 100).toFixed(2);
+          completedTasks = ((data[2]/data[0]) * 100).toFixed(2);
+
+          labels = ["Active Tasks", "Completed Tasks"];
+          data = [activeTasks, completedTasks];
+
+          var progressTasks = new Chart(chartProgressTasks, {
+            type: 'pie',
+            data: {
+              labels: labels,
+              datasets: [{
+                data: data,
+                backgroundColor: [
+                  "#03586A", "#26B99A", "#acadac", "#03586A", "#26B99A", "#acadac"
+                ]
+              }]
+            },
+            options: {
+              maintainAspectRatio: false
+            }
+          });
+        });
+      });
+    </script>
+  
+
+
+</body>
+</html>
+
+		
+		

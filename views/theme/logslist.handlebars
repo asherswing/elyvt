@@ -1,0 +1,193 @@
+<body class="nav-md">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+         <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href ="/projects">Logs</a></li>
+                </ol>
+            </nav>
+       
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <div class="row">
+                <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Logs</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <select id='logs-selector' class="form-control">
+                                </select>
+                              </div>
+                            </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Logs</h3>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="row">
+                    <div class="col-md-12 col-xs-12  widget_tally_box col-lg-12">
+                          <table class="table table-bordered " id="logs-tables">
+                              <thead>
+                                <tr>
+                                  <th>Title</th>
+                                  <th>Date</th>
+                                  <th>User Name</th>
+                                  <th>Object</th>
+                                  <th>Action</th>
+                                  <th>Before </th>
+                                  <th>After</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                            </table>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+
+            </div>
+          </div>
+
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/snap.svg-min.js"></script>
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+<script>
+  var logs = {{{logs}}};
+   var projects = {{{projects}}};
+   
+  let logstables;
+  $.fn.dataTable.ext.errMode = 'none';
+//console.log("========Line No 128",logs)
+  $(window).load(function(){
+   logstables =  $('#logs-tables').DataTable({
+        "order": [ 3, "asc" ]
+    });    
+   changeLogs(logs);
+  });
+
+  $(document).on('change', '#logs-selector', function() {
+    //const selectedProject = logs.filter(logs => logs.log_type === $("#logs-selector").val())
+    
+    changeLogs()
+  })
+
+  const getLogs = ($value) => {
+    if($value ==''){
+    return logs;
+    }
+if($value == 'Active'){
+  return logs.filter(logs => logs.log_content.status === $("#logs-selector").val())
+}
+if($value == 'Upcoming'){
+
+   return logs.filter(logs => logs.log_content.status === $("#logs-selector").val())
+}
+if($value == 'Completed'){
+
+   return logs.filter(logs => logs.log_content.status === $("#logs-selector").val())
+}
+if($value == $("#logs-selector")){
+  var taskData = logs.filter(logs => findProject(logs.project)._id === $value)
+    return taskData;
+}
+     return logs.filter(logs => logs.log_type === $("#logs-selector").val())
+   
+  }
+
+  const changeLogs = () => {
+    const allLogs = getLogs($("#logs-selector").val()).map(logs => [
+        logs.log,
+        logs.created_at,
+        logs.user_id.firstname,
+        logs.log_type,
+        logs.action,
+        logs.old_data,
+        logs.new_data,
+      ])
+
+    logstables.clear()
+    logstables.rows.add(allLogs)
+    logstables.draw()
+  }
+ function findProject(folderId) {
+    const folder = folders.find(folder => folderId === folder._id)
+
+    if (folder.isProject) return folder
+
+    else return findProject(folder.parentId)
+  }
+  var logsOptions = projects.reduce((acc, project) => {
+    var projectDropdown =  `${acc}<option value='${project._id}'>${project.title}</option>`
+    return projectDropdown;
+  },
+  '<option value="">All Logs</option><option value="Active">All Active Project</option><option value="Completed">All Completed Project</option><option value="Upcoming">All Planned Project</option><option value="Project">Project</option><option value="Task">Task</option><option value="Milestone">Milestone</option>')
+
+  $('#logs-selector').html(logsOptions)
+  </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<body class="nav-md">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+        <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href ="/settings">Settings</a></li>
+                </ol>
+            </nav>
+       
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Settings</h3>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="row">
+                    <div class="col-md-12 col-xs-12  widget_tally_box col-lg-12 text-center">
+                         <form class="form" method="POST">
+                           <label>
+                              Mail to be sent from Email: <input type="text" name="from_email" class="form-control" {{#if mailSettingsData.from_email}} value="{{mailSettingsData.from_email}}" {{/if}} placeholder="info@elevate.com" >                              
+                           </label>
+                           <div class="clearfix"></div>
+                           <label>
+                              Day of Week:  {{mailSettingsData.day_of_week }}
+                              <select name="day_of_week" class="form-control"> 
+                                {{{day_of_week_dropdown}}}
+                              </select>                             
+                           </label>
+                           <div class="clearfix"></div>
+                           <label>
+                              Hour of Day: 
+                              <select name="hour_of_day" class="form-control"> 
+                                {{{hour_of_day_dropdown}}}
+                              </select>                             
+                           </label>
+                           <div class="clearfix"></div>
+                           <label>
+                              minute of Hour: <input type="text" name="minute_of_hour" {{#if mailSettingsData.minute_of_hour}} value="{{mailSettingsData.minute_of_hour}}" {{/if}} class="form-control" placeholder="10">                              
+                           </label>
+                           <div class="clearfix"></div>
+                           <button type="submit" class="btn btn-primary">Save</button>
+                         </form>
+                      </div>
+                      <div class="clearfix"></div>
+
+
+                      <div class="clearfix"></div>
+
+
+                      <div id="placeholder"></div>
+                      <div class="clearfix"></div>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+
+            </div>
+          </div>
+
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+
+</body>
+</html>

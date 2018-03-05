@@ -1,0 +1,115 @@
+<body class="nav-md">
+
+  <script>
+  if (jQuery("body").width() < 760) {
+    $('body').addClass('nav-sm');
+    $('body').removeClass('nav-md')
+  }
+  </script>
+  <style type="text/css">
+  .padding-left{
+    padding-left: 10px;
+  }
+  </style>
+
+  <!-- Container -->
+  <div class="container body">
+    <!-- Main Container -->
+    <div class="main_container_db">
+
+      <!-- Sidebar -->
+      {{> sidebar }}
+      <!-- /Sidebar -->
+
+      <!-- page content -->
+      <div class="right_col_db page_content" role="main">
+
+       <!-- top navigation ! -->
+       {{> topbar }}
+       <!-- /top navigation -->
+
+
+       <!-- main cont -->
+       <div class="main_cont">
+
+        <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Project</li>
+                    <li class="breadcrumb-item active" aria-current="page">Task</li>
+                    <li class="breadcrumb-item active" aria-current="page">Questions/Answers</li>
+                </ol>
+            </nav>
+       
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Answer the Question</h3>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="row">
+                    <div class="qa-container col-md-12">
+                      <div class="well well-sm">
+                        <form class="" method="post" action="/task/updatequestions">
+                          <input type="hidden" name="questionID" value="{{{questionID}}}">
+                          <input type="hidden" name="taskId" value="{{{taskId}}}">
+                          <div class="col-md-12">Question: <input type="text" name="question" placeholder="Question..." class="form-control" value="{{{questiondetails.question}}}" /></div>
+                          <div class="col-md-12">Answer: <input type="text" name="answer" placeholder="Answer..." class="form-control" value="{{{questiondetails.answer}}}"/></div>
+                          <div class="col-md-12"><button type="Submit" class="btn btn-primary btn-sm">Submit</button></div>
+                        </form>
+                      </div>
+                    </div>
+                      <div class="clearfix"></div>
+                      <div class="clearfix"></div>
+                      <div id="placeholder"></div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+
+            </div>
+          </div>
+
+          <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              &copy; elyvt.com
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+          <!-- /footer content -->
+        </div>
+        <!-- /main cont -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /Main Container -->
+  </div>
+  <!-- /Container --> 
+
+
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+
+</body>
+</html>

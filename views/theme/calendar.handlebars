@@ -1,0 +1,79 @@
+  <body class="nav-md" onload="init();">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <div class="container body">
+      <div class="main_container_db">
+        {{> sidebar }}
+        
+        <div class="right_col_db" role="main">
+
+          <!-- top navigation!41 -->
+          {{> topbar }}
+          <!-- /top navigation -->
+
+          {{> notifications }}
+
+          <!-- page content -->
+          <div class="main_cont" role="main">
+              <nav aria-label="breadcrumb" role="navigation">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/">Home</a></li>
+                      <li class="breadcrumb-item active">Calendar</li>
+                  </ol>
+              </nav>
+              <div class="clearfix"></div>
+              
+           <div class="col-md-8">
+            
+            <div class="col-md-12">
+             
+
+
+
+            <div id='calendar'></div>
+
+
+          </div>
+        </div>
+        
+      </div>
+
+
+
+  <style>
+  .well-sm{
+    background-color: #fff;
+  }
+  </style>
+  <!-- jQuery -->
+  <!-- http://elyvt.com -->
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap-multiselect.js"></script>
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.js"></script>
+
+  <script src="/vendors/plotly/js/plotly-latest.min.js"></script>
+  <script src="/vendors/plotly/js/numeric.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+   $(document).ready(function() {
+
+  // page is now ready, initialize the calendar...
+
+  $('#calendar').fullCalendar({
+    // put your options and callbacks here
+  })
+
+});
+</script>
+

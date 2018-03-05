@@ -1,0 +1,23 @@
+[
+    {
+        "_id__$oid": "5a38e11db707f85334b3798c",
+        "title": "Admin",
+        "description": "Admin Role",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a38e11db707f85334b3798d",
+        "title": "Manager",
+        "description": "Manager Role",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": "5a38e11db707f85334b3798b",
+        "title": "security",
+        "description": "Security Role",
+        "__v": "0"
+    },
+    {
+        "_id__$oid": ""
+    }
+]
